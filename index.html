@@ -3,29 +3,425 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>自己紹介ページ</title>
-    <link rel="stylesheet" href="style.css">
+    <title>ゲーム攻略ナビ - トップページ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Hiragino Kaku Gothic Pro', 'ヒラギノ角ゴ Pro W3', 'Meiryo', 'メイリオ', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        /* ナビゲーションバー */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: #667eea;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* ヒーローセクション */
+        .hero {
+            background: white;
+            border-radius: 20px;
+            padding: 60px 40px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.3em;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        /* 特徴セクション */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            color: #667eea;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* ゲームカテゴリー */
+        .categories {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 40px;
+        }
+
+        .categories h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .category-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s;
+            text-decoration: none;
+            display: block;
+        }
+
+        .category-item:hover {
+            transform: scale(1.05);
+        }
+
+        .category-item .icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .category-item h3 {
+            color: white;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .category-item p {
+            color: rgba(255,255,255,0.9);
+            font-size: 0.9em;
+        }
+
+        /* 人気記事 */
+        .popular-posts {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 40px;
+        }
+
+        .popular-posts h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+        }
+
+        .post-card {
+            border: 2px solid #f0f0f0;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            display: block;
+        }
+
+        .post-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .post-image {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4em;
+        }
+
+        .post-content {
+            padding: 25px;
+        }
+
+        .post-card h3 {
+            color: #333;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .post-card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .post-meta {
+            display: flex;
+            gap: 15px;
+            font-size: 0.9em;
+            color: #999;
+        }
+
+        footer {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 15px;
+            text-align: center;
+            color: #666;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .posts-grid, .category-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>私の自己紹介</h1>
-        <p>ここに簡単な自己紹介を書いてみよう！</p>
-    </header>
+    <!-- ナビゲーションバー -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">🎮 ゲーム攻略ナビ</a>
+            <ul class="nav-menu">
+                <li><a href="index.html">ホーム</a></li>
+                <li><a href="all-games.html">全ゲーム一覧</a></li>
+                <li><a href="rpg.html">RPG</a></li>
+                <li><a href="action.html">アクション</a></li>
+                <li><a href="about.html">サイトについて</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    <main>
-        <section class="profile">
-            <img src="profile.jpg" alt="プロフィール画像">
-            <h2>名前</h2>
-            <p>〇〇〇〇（ここを自分の名前に変更）</p>
-            <h2>自己紹介</h2>
-            <p>〇〇〇〇（ここに好きなことや趣味を書く）</p>
-            <h2>連絡先</h2>
-            <p>Email: example@example.com（ここを自分のメールに変更）</p>
-        </section>
-    </main>
+    <div class="container">
+        <!-- ヒーローセクション -->
+        <div class="hero">
+            <h1>🎮 ゲーム攻略ナビへようこそ</h1>
+            <p>あなたのゲームライフをサポートする総合攻略サイト</p>
+            <div class="hero-buttons">
+                <a href="all-games.html" class="btn btn-primary">すべての攻略を見る</a>
+                <a href="about.html" class="btn btn-secondary">サイトについて</a>
+            </div>
+        </div>
 
-    <footer>
-        <p>&copy; 2025 〇〇〇〇（名前）</p>
-    </footer>
+        <!-- 特徴 -->
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">📚</div>
+                <h3>詳細な攻略情報</h3>
+                <p>初心者から上級者まで、レベルに合わせた詳しい攻略情報を提供します。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>最新アップデート</h3>
+                <p>新作ゲームやアップデート情報を随時追加。常に最新の情報をお届けします。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💡</div>
+                <h3>実践的なヒント</h3>
+                <p>実際のプレイ経験に基づいた、すぐに使える攻略テクニックを紹介します。</p>
+            </div>
+        </div>
+
+        <!-- カテゴリー -->
+        <div class="categories">
+            <h2>ゲームカテゴリー</h2>
+            <div class="category-grid">
+                <a href="rpg.html" class="category-item">
+                    <div class="icon">🗡️</div>
+                    <h3>RPG</h3>
+                    <p>ロールプレイングゲーム</p>
+                </a>
+                <a href="action.html" class="category-item">
+                    <div class="icon">⚔️</div>
+                    <h3>アクション</h3>
+                    <p>アクションゲーム</p>
+                </a>
+                <a href="adventure.html" class="category-item">
+                    <div class="icon">🗺️</div>
+                    <h3>アドベンチャー</h3>
+                    <p>冒険ゲーム</p>
+                </a>
+                <a href="simulation.html" class="category-item">
+                    <div class="icon">🏡</div>
+                    <h3>シミュレーション</h3>
+                    <p>シミュレーションゲーム</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- 人気記事 -->
+        <div class="popular-posts">
+            <h2>人気の攻略記事</h2>
+            <div class="posts-grid">
+                <a href="game-detail.html?game=zelda" class="post-card">
+                    <div class="post-image">⚔️</div>
+                    <div class="post-content">
+                        <h3>ゼルダの伝説 完全攻略</h3>
+                        <p>ティアーズ オブ ザ キングダムの全祠攻略、隠し要素、最強装備まで徹底解説。</p>
+                        <div class="post-meta">
+                            <span>👁️ 25,234 views</span>
+                            <span>📝 68 guides</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="game-detail.html?game=elden" class="post-card">
+                    <div class="post-image">🛡️</div>
+                    <div class="post-content">
+                        <h3>エルデンリング 攻略ガイド</h3>
+                        <p>高難度アクションRPGの決定版。ビルド構成からボス攻略まで完全網羅。</p>
+                        <div class="post-meta">
+                            <span>👁️ 32,345 views</span>
+                            <span>📝 89 guides</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="game-detail.html?game=splatoon" class="post-card">
+                    <div class="post-image">🦑</div>
+                    <div class="post-content">
+                        <h3>スプラトゥーン3 上達ガイド</h3>
+                        <p>ブキ選択からランクマッチ攻略まで。ウデマエを上げるためのテクニック集。</p>
+                        <div class="post-meta">
+                            <span>👁️ 28,562 views</span>
+                            <span>📝 73 guides</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- フッター -->
+        <footer>
+            <p>&copy; 2024 ゲーム攻略ナビ | 最新のゲーム攻略情報をお届けします</p>
+            <p style="font-size: 0.9em; margin-top: 10px;">本サイトの攻略情報は個人の経験に基づくものです</p>
+        </footer>
+    </div>
 </body>
 </html>
