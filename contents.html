@@ -5,8 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>学習コンテンツ - SPI対策「テッパン！」</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* コンテンツページ独自のスタイル追加 */
+        .category-tag {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 3px;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+        .tag-math { background: #003366; }
+        .tag-lang { background: #ff9900; }
+        .tag-personality { background: #666; }
+        
+        .step-card {
+            transition: transform 0.3s;
+        }
+        .step-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
 </head>
 <body>
+
     <header>
         <div class="container">
             <h1 class="logo"><a href="index.html" style="text-decoration:none; color:inherit;">SPI対策「テッパン！」</a></h1>
@@ -20,26 +42,64 @@
         </div>
     </header>
 
-    <section class="container" style="padding: 60px 0;">
+    <main class="container" style="padding: 40px 0;">
         <h2 class="section-title">科目別学習メニュー</h2>
+        <p style="text-align: center; margin-bottom: 40px;">苦手な分野を選んで、最短ルートで攻略しましょう。</p>
+
         <div class="step-grid">
             <div class="step-card">
-                <h4>非言語 (数学)</h4>
-                <p>損益算、速度算、推論など、論理的思考力を問う問題。公式の暗記がカギです。</p>
-                <a href="#" class="btn btn-primary" style="margin-top:20px;">問題を解く</a>
+                <span class="category-tag tag-math">非言語</span>
+                <h4>損益算</h4>
+                <p>「原価・定価・利益」の関係をマスター。SPI算数の超定番です。</p>
+                <a href="son-eki.html" class="btn btn-primary" style="margin-top:20px; width: 100%;">解説を読む</a>
             </div>
+
             <div class="step-card">
-                <h4>言語 (国語)</h4>
-                <p>語句の意味、二語の関係など。語彙力を増やして短時間で全問正解を目指します。</p>
-                <a href="#" class="btn btn-primary" style="margin-top:20px;">語彙をチェック</a>
+                <span class="category-tag tag-math">非言語</span>
+                <h4>速度算</h4>
+                <p>「はじき」の公式と、間違いやすい単位変換を攻略します。</p>
+                <a href="sokudo.html" class="btn btn-primary" style="margin-top:20px; width: 100%;">解説を読む</a>
             </div>
+
             <div class="step-card">
+                <span class="category-tag tag-math">非言語</span>
+                <h4>推論</h4>
+                <p>最も差がつく難所。図や表を使った論理的思考を養います。</p>
+                <a href="suiron.html" class="btn btn-primary" style="margin-top:20px; width: 100%;">解説を読む</a>
+            </div>
+
+            <div class="step-card">
+                <span class="category-tag tag-lang">言語</span>
+                <h4>言語（国語）</h4>
+                <p>二語の関係、語句の意味、長文読解など、知識とスピードを強化。</p>
+                <a href="gengo.html" class="btn btn-primary" style="margin-top:20px; width: 100%; background: #ff9900; border: none;">解説を読む</a>
+            </div>
+
+            <div class="step-card">
+                <span class="category-tag tag-personality">性格</span>
                 <h4>性格検査</h4>
-                <p>企業の風土に合うかを判定します。矛盾した回答を避けるのがポイントです。</p>
-                <a href="#" class="btn btn-primary" style="margin-top:20px;">解説を読む</a>
+                <p>企業とのミスマッチを防ぐための一貫性のある答え方を解説。</p>
+                <a href="seikaku.html" class="btn btn-primary" style="margin-top:20px; width: 100%; background: #666; border: none;">解説を読む</a>
+            </div>
+
+            <div class="step-card" style="opacity: 0.6;">
+                <span class="category-tag" style="background: #999;">その他</span>
+                <h4>英語（ENG）</h4>
+                <p>準備中：大手商社などで課される英語検査の対策。</p>
+                <button class="btn btn-secondary" style="margin-top:20px; width: 100%; cursor: not-allowed;" disabled>Coming Soon</button>
             </div>
         </div>
-    </section>
+
+        <div style="text-align: center; margin-top: 50px;">
+            <a href="index.html" class="btn btn-secondary">トップページへ戻る</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 SPI対策ガイド「テッパン！」</p>
+        </div>
+    </footer>
+
 </body>
 </html>
-
