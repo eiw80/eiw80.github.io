@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>速度算の攻略 - SPI対策「テッパン！」</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .formula-box {
+            background: #fff0f0;
+            border-left: 5px solid #cc0000;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .unit-conversion {
+            background: #f0f0f0;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-size: 0.9rem;
+        }
+        .practice-card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        .answer-box {
+            display: none;
+            background: #fff9e6;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 5px;
+            border: 1px dashed #ffcc00;
+        }
+        .btn-check {
+            background: #003366;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .highlight {
+            color: #cc0000;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1 class="logo"><a href="index.html" style="text-decoration:none; color:inherit;">SPI対策「テッパン！」</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="about.html">SPIとは</a></li>
+                    <li><a href="steps.html">対策の流れ</a></li>
+                    <li><a href="contents.html">学習コンテンツ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" style="padding: 40px 0;">
+        <h2 class="section-title">非言語：速度算の攻略</h2>
+
+        <section>
+            <h3>1. 基本の「はじき」</h3>
+            <p>速度算の基本は、以下の3つの要素の関係性を理解することです。</p>
+            
+            [attachment_0](attachment)
+
+            <div class="formula-box">
+                <ul>
+                    <li><strong>距離 = 速さ × 時間</strong></li>
+                    <li><strong>速さ = 距離 ÷ 時間</strong></li>
+                    <li><strong>時間 = 距離 ÷ 速さ</strong></li>
+                </ul>
+            </div>
+
+            <div class="unit-conversion">
+                <strong>⚠️ 注意：単位の変換</strong><br>
+                SPIでは「時速」で与えられた条件を「分」で答えさせるようなトラップが多いです。<br>
+                ・時速を分速にする：$\text{時速} \div 60$<br>
+                ・時間を分にする：$\text{時間} \times 60$
+            </div>
+        </section>
+
+        <section style="margin-top: 40px;">
+            <h3>2. 練習問題</h3>
+            
+            <div class="practice-card">
+                <h4>【問題1】基本の計算</h4>
+                <p>時速 72km で走る自動車が、25分間に進む距離は何kmですか？</p>
+                <button class="btn-check" onclick="toggleAnswer('ans1')">答えを見る</button>
+                <div id="ans1" class="answer-box">
+                    <strong>正解：30km</strong><br>
+                    解説：<br>
+                    1. 単位を合わせる：時速 72km は、分速に直すと $72 \div 60 = 1.2$km/分。<br>
+                    2. 距離を求める：$1.2 \text{(km/分)} \times 25 \text{(分)} = 30$km
+                </div>
+            </div>
+
+            <div class="practice-card">
+                <h4>【問題2】追いかけ算</h4>
+                <p>分速 60m で歩いている A君が家を出てから 10分後に、兄が分速 100m の自転車で追いかけました。兄が A君に追いつくのは、兄が出発してから何分後ですか？</p>
+                <button class="btn-check" onclick="toggleAnswer('ans2')">答えを見る</button>
+                <div id="ans2" class="answer-box">
+                    <strong>正解：15分後</strong><br>
+                    解説：<br>
+                    1. 兄が出発する時の差：$60 \text{(m/分)} \times 10 \text{(分)} = 600$m<br>
+                    2. 1分間に縮まる距離：$100 - 60 = 40$m/分<br>
+                    3. 追いつく時間：$600 \div 40 = 15$分
+                </div>
+            </div>
+        </section>
+
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="contents.html" class="btn btn-secondary" style="color:#003366; border-color:#003366;">コンテンツ一覧に戻る</a>
+        </div>
+    </main>
+
+    <script>
+        function toggleAnswer(id) {
+            const ans = document.getElementById(id);
+            ans.style.display = (ans.style.display === "block") ? "none" : "block";
+        }
+    </script>
+
+</body>
+</html>
+
