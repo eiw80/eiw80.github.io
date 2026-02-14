@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>英語(ENG)の攻略 - SPI対策「テッパン！」</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .strategy-box {
+            background: #f0f4ff;
+            border-left: 5px solid #0055aa;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .eng-category {
+            font-weight: bold;
+            color: #0055aa;
+            margin-top: 15px;
+            display: block;
+        }
+        .practice-card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        .answer-box {
+            display: none;
+            background: #fdfdfd;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 5px;
+            border: 1px dashed #0055aa;
+        }
+        .btn-check {
+            background: #0055aa;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1 class="logo"><a href="index.html" style="text-decoration:none; color:inherit;">SPI対策「テッパン！」</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="about.html">SPIとは</a></li>
+                    <li><a href="steps.html">対策の流れ</a></li>
+                    <li><a href="contents.html">学習コンテンツ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" style="padding: 40px 0;">
+        <h2 class="section-title">英語（ENG）の攻略</h2>
+
+        <section>
+            <h3>1. ENGの出題形式</h3>
+            <p>約20分間で約40問を解く必要があります。1問あたり30秒という超高速回答が求められます。</p>
+            
+            <div class="strategy-box">
+                <span class="eng-category">■ 語彙・文法</span>
+                <p>同意語、反対語、空欄補充。中学〜高校レベルの英単語が中心ですが、瞬発力が必要です。</p>
+                <span class="eng-category">■ 読解</span>
+                <p>長文読解。内容はビジネスや科学など多岐にわたりますが、難易度はセンター試験（共通テスト）程度です。</p>
+            </div>
+            
+            
+        </section>
+
+        <section style="margin-top: 40px;">
+            <h3>2. 練習問題</h3>
+            
+            <div class="practice-card">
+                <h4>【問題1】同意語（Synonyms）</h4>
+                <p>最初に示された語と最も意味が近いものを選びなさい。</p>
+                <p><strong>「ENORMOUS」</strong></p>
+                <ol type="A" style="margin-left: 20px;">
+                    <li>Tiny</li>
+                    <li>Huge</li>
+                    <li>Common</li>
+                </ol>
+                <br>
+                <button class="btn-check" onclick="toggleAnswer('ans1')">Show Answer</button>
+                <div id="ans1" class="answer-box">
+                    <strong>正解：B（Huge）</strong><br>
+                    解説：「Enormous」は「巨大な、莫大な」という意味です。同意語は「Huge」や「Vast」になります。AのTinyは反対語です。
+                </div>
+            </div>
+
+            <div class="practice-card">
+                <h4>【問題2】空欄補充（Fill-in-the-blank）</h4>
+                <p>文中の（ ）に入れるのに最も適切なものを選びなさい。</p>
+                <p><strong>"The new project will (  ) a lot of time and effort."</strong></p>
+                <ol type="A" style="margin-left: 20px;">
+                    <li>require</li>
+                    <li>provide</li>
+                    <li>expect</li>
+                </ol>
+                <br>
+                <button class="btn-check" onclick="toggleAnswer('ans2')">Show Answer</button>
+                <div id="ans2" class="answer-box">
+                    <strong>正解：A（require）</strong><br>
+                    解説：「その新しいプロジェクトは多くの時間と労力を（必要とする）だろう」という意味になるよう、require（必要とする）を選びます。
+                </div>
+            </div>
+        </section>
+
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="contents.html" class="btn btn-secondary" style="color:#003366; border-color:#003366;">コンテンツ一覧に戻る</a>
+        </div>
+    </main>
+
+    <script>
+        function toggleAnswer(id) {
+            const ans = document.getElementById(id);
+            ans.style.display = (ans.style.display === "block") ? "none" : "block";
+        }
+    </script>
+
+</body>
+</html>
