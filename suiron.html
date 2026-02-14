@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>推論の攻略 - SPI対策「テッパン！」</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .strategy-box {
+            background: #f4fdf4;
+            border-left: 5px solid #28a745;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .point-tag {
+            display: inline-block;
+            background: #28a745;
+            color: #fff;
+            padding: 2px 10px;
+            border-radius: 3px;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+        }
+        .practice-card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        .answer-box {
+            display: none;
+            background: #fff9e6;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 5px;
+            border: 1px dashed #ffcc00;
+        }
+        .btn-check {
+            background: #003366;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1 class="logo"><a href="index.html" style="text-decoration:none; color:inherit;">SPI対策「テッパン！」</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="about.html">SPIとは</a></li>
+                    <li><a href="steps.html">対策の流れ</a></li>
+                    <li><a href="contents.html">学習コンテンツ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" style="padding: 40px 0;">
+        <h2 class="section-title">非言語：推論の攻略</h2>
+
+        <section>
+            <h3>1. 推論を解くコツ</h3>
+            <p>推論は「与えられた条件から確実に言えること」を選ぶ問題です。頭の中で考えず、必ず図や表を書きましょう。</p>
+            
+            <div class="strategy-box">
+                <span class="point-tag">鉄則</span>
+                <ul>
+                    <li><strong>順序の問題：</strong> 矢印や不等号を使って可視化する（A > B > Cなど）</li>
+                    <li><strong>内訳・対戦の問題：</strong> 表（マトリックス）を書いて情報を整理する</li>
+                    <li><strong>場合分け：</strong> 「もし〜だったら」というパターンをすべて書き出す</li>
+                </ul>
+            </div>
+            
+            
+        </section>
+
+        <section style="margin-top: 40px;">
+            <h3>2. 練習問題</h3>
+            
+            <div class="practice-card">
+                <h4>【問題1】順位の推論</h4>
+                <p>P、Q、R、S、Tの5人がテストを受けました。次の条件がわかっているとき、確実に正しいと言えるものはどれですか？</p>
+                <ul>
+                    <li>PはQより点数が高い。</li>
+                    <li>RはSより点数が高いが、Tよりは低い。</li>
+                    <li>QとTは同じ点数である。</li>
+                </ul>
+                <button class="btn-check" onclick="toggleAnswer('ans1')">答えを見る</button>
+                <div id="ans1" class="answer-box">
+                    <strong>正解：PはRより点数が高い</strong><br>
+                    解説：<br>
+                    1. 条件を不等号で並べる：<br>
+                    ・P > Q<br>
+                    ・T > R > S<br>
+                    ・Q = T<br>
+                    2. つなげると：<strong>P > Q = T > R > S</strong> となるため、Pが最も高く、P > R も確実に正しい。
+                </div>
+            </div>
+
+            <div class="practice-card">
+                <h4>【問題2】内訳の推論</h4>
+                <p>箱の中に赤、青、白の玉が合計10個入っています。次の条件のとき、赤玉は何個ですか？</p>
+                <ul>
+                    <li>赤玉は青玉より多い。</li>
+                    <li>白玉は赤玉のちょうど2倍である。</li>
+                </ul>
+                <button class="btn-check" onclick="toggleAnswer('ans2')">答えを見る</button>
+                <div id="ans2" class="answer-box">
+                    <strong>正解：3個</strong><br>
+                    解説：<br>
+                    赤を $x$個 とすると、白は $2x$個。<br>
+                    青は $10 - (x + 2x) = 10 - 3x$個。<br>
+                    条件「赤 > 青」より、$x > 10 - 3x$ → $4x > 10$ → $x$ は 2.5より大きい。<br>
+                    もし赤が4個なら白は8個となり合計12個でオーバー。よって赤は<strong>3個</strong>（このとき白6個、青1個）のみ成立する。
+                </div>
+            </div>
+        </section>
+
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="contents.html" class="btn btn-secondary" style="color:#003366; border-color:#003366;">コンテンツ一覧に戻る</a>
+        </div>
+    </main>
+
+    <script>
+        function toggleAnswer(id) {
+            const ans = document.getElementById(id);
+            ans.style.display = (ans.style.display === "block") ? "none" : "block";
+        }
+    </script>
+
+</body>
+</html>
