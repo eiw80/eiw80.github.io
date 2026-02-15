@@ -120,6 +120,33 @@
                     もし赤が4個なら白は8個となり合計12個でオーバー。よって赤は<strong>3個</strong>（このとき白6個、青1個）のみ成立する。
                 </div>
             </div>
+
+            <div class="practice-card">
+                <h4>【問題3】条件の組み合わせ推論</h4>
+                <p>X、Y、Z の3人が試験を受けました。以下の条件から、確実に言える順位は？</p>
+                <ul>
+                    <li>XはYより高い点数である。</li>
+                    <li>ZはYより高い点数である。</li>
+                    <li>XとZの点数は異なる。</li>
+                </ul>
+                <ol type="A" style="margin-left: 20px;">
+                    <li>1位X、2位Z、3位Y</li>
+                    <li>1位Z、2位X、3位Y</li>
+                    <li>XとZについては確定できないが、Yは3位である</li>
+                </ol>
+                <button class="btn-check" onclick="toggleAnswer('ans3')">答えを見る</button>
+                <div id="ans3" class="answer-box">
+                    <strong>正解：C（XとZについては確定できないが、Yは3位である）</strong><br>
+                    解説：<br>
+                    条件をまとめると：<br>
+                    ・X > Y<br>
+                    ・Z > Y<br>
+                    ・X ≠ Z<br>
+                    <br>
+                    X と Z の大小関係は与えられていないため、Xが1位Z が2位か、Z が1位X が2位か、どちらもあり得ます。<br>
+                    しかし、どちらの場合でもYは確実に3位（最下位）です。
+                </div>
+            </div>
         </section>
 
         <div style="text-align: center; margin-top: 40px;">
