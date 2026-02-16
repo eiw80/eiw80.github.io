@@ -52,28 +52,6 @@
             font-size: 0.75rem;
             margin-bottom: 10px;
         }
-        /* 戻るボタンの改善 */
-        .nav-footer {
-            text-align: center;
-            margin: 50px 0;
-            padding: 20px;
-            border-top: 1px solid #eee;
-        }
-        .btn-back {
-            display: inline-block;
-            background: #666;
-            color: #fff !important;
-            padding: 12px 30px;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: bold;
-            transition: 0.3s;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        .btn-back:hover {
-            background: #333;
-            transform: translateY(-2px);
-        }
     </style>
 </head>
 <body>
@@ -96,9 +74,9 @@
 
         <section>
             <h3>1. 基本公式の確認</h3>
-            <p>速度算は「距離」「速さ」「時間」の関係を理解することがすべてです。「はじき（みはじ）」の図を頭に叩き込みましょう。</p>
+            <p>速度算は「距離」「速さ」「時間」の3つの要素で構成されます。単位の不一致（時速と分など）がないか常に確認しましょう。</p>
             
-            
+            [attachment_0](attachment)
 
             <div class="formula-box">
                 <p class="formula">距離 ＝ 速さ × 時間</p>
@@ -107,69 +85,123 @@
         </section>
 
         <section style="margin-top: 40px;">
-            <h3>2. 練習問題（追加4問）</h3>
+            <h3>2. 練習問題</h3>
 
             <div class="practice-card">
-                <span class="q-tag">通過算</span>
-                <h4>【問題7】トンネルの通過</h4>
-                <p>長さ150mの列車が、時速72kmで長さ650mのトンネルを通過する。列車がトンネルに入り始めてから、完全に抜け出すまでに何秒かかるか。</p>
-                <button class="btn-check" onclick="toggleAnswer('ans7')">回答を表示</button>
-                <div id="ans7" class="answer-box">
-                    <strong>正解：40秒</strong><br>
-                    解説：<br>
-                    1. まず時速を秒速に直します。72,000m ÷ 3,600秒 ＝ 20m/秒。<br>
-                    2. 進むべき合計距離は「列車の長さ ＋ トンネルの長さ」です。150m ＋ 650m ＝ 800m。<br>
-                    3. 800m ÷ 20m/秒 ＝ 40秒。
+                <span class="q-tag">基本</span>
+                <h4>【問題1】距離を求める</h4>
+                <p>時速60kmで走る自動車が、2時間30分で進む距離は何kmか。</p>
+                <button class="btn-check" onclick="toggleAnswer('ans1')">回答を表示</button>
+                <div id="ans1" class="answer-box">
+                    <strong>正解：150km</strong><br>
+                    解説：2時間30分を時間に直すと2.5時間。 60(km/h) × 2.5(h) = 150km。
                 </div>
             </div>
 
             <div class="practice-card">
-                <span class="q-tag">旅人算</span>
+                <span class="q-tag">単位変換</span>
+                <h4>【問題2】分速と秒速</h4>
+                <p>分速720mの自転車は、秒速何mか。</p>
+                <button class="btn-check" onclick="toggleAnswer('ans2')">回答を表示</button>
+                <div id="ans2" class="answer-box">
+                    <strong>正解：秒速12m</strong><br>
+                    解説：1分は60秒。 720(m) ÷ 60(s) = 12(m/s)。
+                </div>
+            </div>
+
+            <div class="practice-card">
+                <span class="q-tag">旅人算（出会い）</span>
+                <h4>【問題3】反対方向からの接近</h4>
+                <p>1.2km離れた地点から、A君は分速70m、B君は分速80mで向かい合って同時に歩き出した。2人が出会うのは何分後か。</p>
+                <button class="btn-check" onclick="toggleAnswer('ans3')">回答を表示</button>
+                <div id="ans3" class="answer-box">
+                    <strong>正解：8分後</strong><br>
+                    解説：2人の距離が縮まる速さは 70 + 80 = 150(m/分)。 1.2km = 1200m なので、 1200 ÷ 150 = 8(分)。
+                </div>
+            </div>
+
+            <div class="practice-card">
+                <span class="q-tag">旅人算（追いかけ）</span>
+                <h4>【問題4】追いかけ</h4>
+                <p>弟が家を出てから10分後に、兄が自転車で弟を追いかけた。弟の歩く速さは分速60m、兄の自転車の速さは分速210mである。兄は出発してから何分後に弟に追いつくか。</p>
+                <button class="btn-check" onclick="toggleAnswer('ans4')">回答を表示</button>
+                <div id="ans4" class="answer-box">
+                    <strong>正解：4分後</strong><br>
+                    解説：兄が出発したとき、弟は 60 × 10 = 600m 先にいる。1分間に縮まる距離は 210 - 60 = 150m。 600 ÷ 150 = 4(分)。
+                </div>
+            </div>
+
+            <div class="practice-card">
+                <span class="q-tag">平均の速さ</span>
+                <h4>【問題5】往復の平均</h4>
+                <p>行きを時速4km、帰りを時速6kmで歩いて往復した。この往復の平均の速さは時速何kmか。</p>
+                <button class="btn-check" onclick="toggleAnswer('ans5')">回答を表示</button>
+                <div id="ans5" class="answer-box">
+                    <strong>正解：時速4.8km</strong><br>
+                    解説：距離を12kmと仮定すると、行きは3時間、帰りは2時間かかる。合計24kmを5時間で移動したので、 24 ÷ 5 = 4.8(km/h)。
+                </div>
+            </div>
+
+            <div class="practice-card">
+                <span class="q-tag">通過算</span>
+                <h4>【問題6】鉄橋を渡る</h4>
+                <p>長さ120mの列車が、長さ480mの鉄橋を渡り始めてから渡り終わるまでに30秒かかった。列車の速さは時速何kmか。</p>
+                <button class="btn-check" onclick="toggleAnswer('ans6')">回答を表示</button>
+                <div id="ans6" class="answer-box">
+                    <strong>正解：時速72km</strong><br>
+                    解説：進んだ距離は 120 + 480 = 600m。秒速は 600 ÷ 30 = 20(m/s)。時速に直すと 20 × 3.6 = 72(km/h)。
+                </div>
+            </div>
+
+            <div class="practice-card">
+                <span class="q-tag">通過算</span>
+                <h4>【問題7】トンネルの通過</h4>
+                <p>長さ150mの列車が、時速72kmで長さ650mのトンネルを通過する。入り始めてから完全に抜け出すまでに何秒かかるか。</p>
+                <button class="btn-check" onclick="toggleAnswer('ans7')">回答を表示</button>
+                <div id="ans7" class="answer-box">
+                    <strong>正解：40秒</strong><br>
+                    解説：時速72km = 秒速20m。移動距離は 150 + 650 = 800m。 800 ÷ 20 = 40(秒)。
+                </div>
+            </div>
+
+            <div class="practice-card">
+                <span class="q-tag">旅人算（追い抜き）</span>
                 <h4>【問題8】列車の追い抜き</h4>
-                <p>長さ100m、時速80kmで走る列車Aが、同じ方向に時速62kmで走る長さ150mの列車Bに追いついた。AがBを完全に追い抜くまでに何秒かかるか。</p>
+                <p>長さ100m、時速80kmの列車Aが、同じ方向に時速62kmで走る長さ150mの列車Bを追い抜くのに何秒かかるか。</p>
                 <button class="btn-check" onclick="toggleAnswer('ans8')">回答を表示</button>
                 <div id="ans8" class="answer-box">
                     <strong>正解：50秒</strong><br>
-                    解説：<br>
-                    1. 同じ方向に進む場合の相対速度は「速さの差」です。80 － 62 ＝ 18km/時。<br>
-                    2. 18km/時を秒速に直すと、18,000m ÷ 3,600秒 ＝ 5m/秒。<br>
-                    3. 追い抜くために必要な距離は、両方の列車の長さの合計です。100m ＋ 150m ＝ 250m。<br>
-                    4. 250m ÷ 5m/秒 ＝ 50秒。
+                    解説：相対速度は 80 - 62 = 18km/h（秒速5m）。追い抜く距離は 100 + 150 = 250m。 250 ÷ 5 = 50(秒)。
                 </div>
             </div>
 
             <div class="practice-card">
                 <span class="q-tag">時計算</span>
-                <h4>【問題9】時計の針の重なり</h4>
-                <p>3時ちょうどから、短針と長針が初めて重なるのは、3時何分か。</p>
+                <h4>【問題9】針の重なり</h4>
+                <p>3時ちょうどから、長針と短針が初めて重なるのは3時何分か。</p>
                 <button class="btn-check" onclick="toggleAnswer('ans9')">回答を表示</button>
                 <div id="ans9" class="answer-box">
-                    <strong>正解：16と4/11分（約16.4分）</strong><br>
-                    解説：<br>
-                    1. 短針は毎分0.5度、長針は毎分6度進みます。1分間で「5.5度」差が縮まります。<br>
-                    2. 3時ちょうど、長針と短針の角度の差は90度（30度×3）です。<br>
-                    3. 90度 ÷ 5.5度 ＝ 180/11 ＝ 16と4/11分。
+                    <strong>正解：16と4/11分</strong><br>
+                    解説：最初は90度の差。1分で5.5度縮まるので、 90 ÷ 5.5 = 180/11 = 16と4/11(分)。
                 </div>
             </div>
 
             <div class="practice-card">
                 <span class="q-tag">流水算</span>
-                <h4>【問題10】川をさかのぼる船</h4>
-                <p>静水時での速さが時速15kmの船が、流速時速3kmの川を12kmさかのぼるのにかかる時間は何分か。</p>
+                <h4>【問題10】川をさかのぼる</h4>
+                <p>静水時の速さが時速15kmの船が、流速時速3kmの川を12kmさかのぼるのにかかる時間は？</p>
                 <button class="btn-check" onclick="toggleAnswer('ans10')">回答を表示</button>
                 <div id="ans10" class="answer-box">
                     <strong>正解：60分（1時間）</strong><br>
-                    解説：<br>
-                    1. さかのぼる時の速さは「静水時の速さ － 川の速さ」です。15 － 3 ＝ 12km/時。<br>
-                    2. 距離12km ÷ 速さ12km/時 ＝ 1時間。<br>
-                    3. 1時間 ＝ 60分。
+                    解説：さかのぼる速さは 15 - 3 = 12km/h。 12km ÷ 12km/h = 1(時間)。
                 </div>
             </div>
+
         </section>
 
-        <footer class="nav-footer">
-            <a href="contents.html" class="btn-back">← 学習コンテンツ一覧へ戻る</a>
-        </footer>
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="contents.html" class="btn btn-secondary" style="color:#003366; border-color:#003366;">コンテンツ一覧に戻る</a>
+        </div>
     </main>
 
     <script>
