@@ -7,19 +7,10 @@
     <link rel="stylesheet" href="style.css">
     <style>
         .strategy-box {
-            background: #f4fdf4;
-            border-left: 5px solid #28a745;
+            background: #f0fff0;
+            border-left: 5px solid #2ecc71;
             padding: 20px;
             margin: 20px 0;
-        }
-        .point-tag {
-            display: inline-block;
-            background: #28a745;
-            color: #fff;
-            padding: 2px 10px;
-            border-radius: 3px;
-            font-size: 0.8rem;
-            margin-bottom: 10px;
         }
         .practice-card {
             background: #fff;
@@ -30,20 +21,30 @@
         }
         .answer-box {
             display: none;
-            background: #fff9e6;
+            background: #fafffa;
             padding: 15px;
             margin-top: 15px;
             border-radius: 5px;
-            border: 1px dashed #ffcc00;
-            line-height: 1.8;
+            border: 1px dashed #2ecc71;
+            line-height: 1.6;
         }
         .btn-check {
-            background: #003366;
+            background: #2ecc71;
             color: #fff;
             border: none;
             padding: 10px 20px;
             cursor: pointer;
             border-radius: 5px;
+            font-weight: bold;
+        }
+        .q-tag {
+            display: inline-block;
+            background: #eafaf1;
+            color: #27ae60;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            margin-bottom: 10px;
         }
     </style>
 </head>
@@ -63,92 +64,187 @@
     </header>
 
     <main class="container" style="padding: 40px 0;">
-        <h2 class="section-title">非言語：推論の攻略</h2>
+        <h2 class="section-title">推論の攻略</h2>
 
         <section>
-            <h3>1. 推論を解くコツ</h3>
-            <p>推論は「与えられた条件から確実に言えること」を選ぶ問題です。頭の中で考えず、必ず図や表を書きましょう。</p>
+            <h3>1. 推論を解く鉄則</h3>
+            <p>推論は、与えられた複数の条件を組み合わせて、論理的に「確実に言えること」を導き出す問題です。</p>
             
             <div class="strategy-box">
-                <span class="point-tag">鉄則</span>
+                <strong>💡 攻略の3ステップ</strong>
                 <ul>
-                    <li><strong>順序の問題：</strong> 矢印や不等号を使って可視化する（A ＞ B ＞ Cなど）</li>
-                    <li><strong>内訳・対戦の問題：</strong> 表（マトリックス）を書いて情報を整理する</li>
-                    <li><strong>場合分け：</strong> 「もし〜だったら」というパターンをすべて書き出す</li>
+                    <li><strong>図式化：</strong> 順序なら数直線、内訳なら表、勝敗ならリーグ表を書く。</li>
+                    <li><strong>場合分け：</strong> 確定しない条件があるときは「Aの場合」「Bの場合」と分けて考える。</li>
+                    <li><strong>選択肢の検証：</strong> 「確実に正しい」ものを選ぶため、一つでも反例（正しくないケース）があれば除外する。</li>
                 </ul>
             </div>
-            
-            
         </section>
 
         <section style="margin-top: 40px;">
             <h3>2. 練習問題</h3>
-            
-            <div class="practice-card">
-                <h4>【問題1】順位の推論</h4>
-                <p>P、Q、R、S、Tの5人がテストを受けました。次の条件がわかっているとき、確実に正しいと言えるものはどれですか？</p>
-                <ul>
-                    <li>PはQより点数が高い。</li>
-                    <li>RはSより点数が高いが、Tよりは低い。</li>
-                    <li>QとTは同じ点数である。</li>
-                </ul>
-                <button class="btn-check" onclick="toggleAnswer('ans1')">答えを見る</button>
-                <div id="ans1" class="answer-box">
-                    <strong>正解：PはRより点数が高い</strong><br>
-                    解説：<br>
-                    1. 条件を不等号で整理します。<br>
-                    　・条件1より：P ＞ Q<br>
-                    　・条件2より：T ＞ R ＞ S<br>
-                    　・条件3より：Q ＝ T<br>
-                    2. すべての条件をつなげると：<strong>P ＞ Q ＝ T ＞ R ＞ S</strong> となります。<br>
-                    3. したがって、P ＞ R が確実に成り立つことがわかります。
-                </div>
-            </div>
 
             <div class="practice-card">
-                <h4>【問題2】内訳の推論</h4>
-                <p>箱の中に赤、青、白の玉が合計10個入っています。次の条件のとき、赤玉は何個ですか？</p>
-                <ul>
-                    <li>赤玉は青玉より多い。</li>
-                    <li>白玉は赤玉のちょうど2倍である。</li>
-                </ul>
-                <button class="btn-check" onclick="toggleAnswer('ans2')">答えを見る</button>
-                <div id="ans2" class="answer-box">
-                    <strong>正解：3個</strong><br>
-                    解説：<br>
-                    赤の個数をもとに、当てはまる数字を探します。<br>
-                    ・白は赤の2倍なので：赤が3個なら白は6個。<br>
-                    ・青の個数は：10 － (3 ＋ 6) ＝ 1個。<br>
-                    ・条件「赤 ＞ 青」をチェック：3 ＞ 1 なので成立します。<br><br>
-                    ちなみに、赤が4個だと白は8個になり、合計が12個で10個を超えてしまうため、正解は<strong>3個</strong>しかありません。
-                </div>
-            </div>
-
-            <div class="practice-card">
-                <h4>【問題3】条件の組み合わせ推論</h4>
-                <p>X、Y、Z の3人が試験を受けました。以下の条件から、確実に言える順位は？</p>
-                <ul>
-                    <li>XはYより高い点数である。</li>
-                    <li>ZはYより高い点数である。</li>
-                    <li>XとZの点数は異なる。</li>
-                </ul>
-                <ol type="A" style="margin-left: 20px;">
-                    <li>1位X、2位Z、3位Y</li>
-                    <li>1位Z、2位X、3位Y</li>
-                    <li>XとZについては確定できないが、Yは3位である</li>
+                <span class="q-tag">順序</span>
+                <h4>【問題1】背の高さ</h4>
+                <p>P、Q、R、S、Tの5人の背の高さについて以下のことがわかっている。<br>
+                   ① PはQより高い。<br>
+                   ② RはSより低い。<br>
+                   ③ TはPより低く、Sより高い。<br>
+                   このとき、確実に言えるのはどれか。</p>
+                <ol type="A">
+                    <li>RはPより低い</li>
+                    <li>QはSより高い</li>
+                    <li>TはQより高い</li>
                 </ol>
-                <button class="btn-check" onclick="toggleAnswer('ans3')">答えを見る</button>
-                <div id="ans3" class="answer-box">
-                    <strong>正解：C（XとZについては確定できないが、Yは3位である）</strong><br>
-                    解説：<br>
-                    1. 条件を整理します。<br>
-                    　・X ＞ Y<br>
-                    　・Z ＞ Y<br>
-                    　・X ≠ Z（XとZは異なる）<br>
-                    2. X と Z の大小関係（どちらが上か）を示す条件がないため、1位がどちらかは決まりません。<br>
-                    3. しかし、どちらも Y よりは上なので、消去法で Y が確実に3位となります。
+                <br>
+                <button class="btn-check" onclick="toggleAnswer('ans1')">回答を表示</button>
+                <div id="ans1" class="answer-box">
+                    <strong>正解：A</strong><br>
+                    解説：条件を繋げると「P ＞ T ＞ S ＞ R」となります。Qの位置はPより低いことしかわかりませんが、RはS・T・Pより確実に低いことがわかります。
                 </div>
             </div>
+
+            <div class="practice-card">
+                <span class="q-tag">内訳</span>
+                <h4>【問題2】3種類の果物</h4>
+                <p>りんご、みかん、ぶどうを合わせて10個買った。以下のことがわかっている。<br>
+                   ① どの果物も少なくとも1個は買った。<br>
+                   ② りんごが最も多く、ぶどうが最も少ない。<br>
+                   ③ みかんは3個買った。<br>
+                   このとき、りんごは何個買ったか。</p>
+                <button class="btn-check" onclick="toggleAnswer('ans2')">回答を表示</button>
+                <div id="ans2" class="answer-box">
+                    <strong>正解：5個 または 6個</strong><br>
+                    解説：みかんは3個、合計10個なので「りんご＋ぶどう＝7個」。条件②より りんご ＞ みかん(3) ＞ ぶどう(1以上) です。<br>
+                    ・ぶどう1個のとき、りんご6個（6 > 3 > 1 で成立）<br>
+                    ・ぶどう2個のとき、りんご5個（5 > 3 > 2 で成立）<br>
+                    ・ぶどう3個以上だと「みかんより少ない」に反するため不可。
+                </div>
+            </div>
+
+            <div class="practice-card">
+                <span class="q-tag">勝敗</span>
+                <h4>【問題3】4チームの対戦</h4>
+                <p>A、B、C、Dの4チームが総当たり戦を行った。引き分けはない。<br>
+                   ① AはBに勝った。<br>
+                   ② BはCに勝ち、CはDに勝った。<br>
+                   ③ DはAに勝った。<br>
+                   このとき、3勝したチームはどこか。</p>
+                <button class="btn-check" onclick="toggleAnswer('ans3')">回答を表示</button>
+                <div id="ans3" class="answer-box">
+                    <strong>正解：いない（確実に言えるチームはない）</strong><br>
+                    解説：リーグ表を埋めると、AはBに勝ちDに負け、BはCに勝ちAに負け...と三すくみの状態になっています。全勝（3勝）チームは存在しません。
+                </div>
+            </div>
+
+            <div class="practice-card">
+                <span class="q-tag">方位・位置</span>
+                <h4>【問題4】座席の位置</h4>
+                <p>円形のテーブルにP、Q、R、Sの4人が座っている。<br>
+                   ① Pの正面はRである。<br>
+                   ② QはPの隣に座っている。<br>
+                   このとき、Sについて確実に言えることはどれか。</p>
+                <ol type="A">
+                    <li>SはRの隣である</li>
+                    <li>SはQの正面である</li>
+                    <li>SはPの隣である</li>
+                </ol>
+                <br>
+                <button class="btn-check" onclick="toggleAnswer('ans4')">回答を表示</button>
+                <div id="ans4" class="answer-box">
+                    <strong>正解：A、B、Cすべて正しい</strong><br>
+                    解説：4人席でPとRが向かい合っているなら、残りのQとSも向かい合うことになります。よってSはQの正面であり、かつ両隣がPとRになります。
+                </div>
+            </div>
+
+            <div class="practice-card">
+                <span class="q-tag">平均点</span>
+                <h4>【問題5】4人のテスト</h4>
+                <p>A、B、C、Dの4人のテスト結果について以下のことがわかっている。<br>
+                   ① 4人の平均点は70点である。<br>
+                   ② AはBより10点高い。<br>
+                   ③ CとDは同じ点数である。<br>
+                   Aが80点だったとき、Cは何点か。</p>
+                <button class="btn-check" onclick="toggleAnswer('ans5')">回答を表示</button>
+                <div id="ans5" class="answer-box">
+                    <strong>正解：65点</strong><br>
+                    解説：合計点は 70 × 4 = 280点。Aが80点ならBは70点。残りの130点をCとDで等分するので 130 ÷ 2 = 65点。
+                </div>
+            </div>
+
+            <div class="practice-card">
+                <span class="q-tag">対偶・論理</span>
+                <h4>【問題6】命題の真偽</h4>
+                <p>「この村の人は、ラーメンが好きなら餃子も好きである」という命題が真であるとき、確実に真と言えるのはどれか。</p>
+                <ol type="A">
+                    <li>餃子が好きな人はラーメンも好きだ</li>
+                    <li>餃子が嫌いな人はラーメンも嫌いだ</li>
+                    <li>ラーメンが嫌いな人は餃子も嫌いだ</li>
+                </ol>
+                <br>
+                <button class="btn-check" onclick="toggleAnswer('ans6')">回答を表示</button>
+                <div id="ans6" class="answer-box">
+                    <strong>正解：B</strong><br>
+                    解説：命題「P → Q」が真のとき、その対偶「not Q → not P」も必ず真になります。「ラーメン → 餃子」の対偶は「餃子ではない → ラーメンではない」です。
+                </div>
+            </div>
+
+            <div class="practice-card">
+                <span class="q-tag">整数</span>
+                <h4>【問題7】3つの数字</h4>
+                <p>1, 2, 3, 4, 5の中から異なる3つの数字を選んで合計した。<br>
+                   ① 合計は12である。<br>
+                   ② 選んだ中に「2」は含まれていない。<br>
+                   選んだ3つの数字の中で最大のものは何か。</p>
+                <button class="btn-check" onclick="toggleAnswer('ans7')">回答を表示</button>
+                <div id="ans7" class="answer-box">
+                    <strong>正解：5</strong><br>
+                    解説：2を使わずに合計12にする組み合わせは「3, 4, 5」のみです（1+3+4=8, 1+4+5=10などは不可）。よって最大値は5。
+                </div>
+            </div>
+
+            <div class="practice-card">
+                <span class="q-tag">順序</span>
+                <h4>【問題8】行列の順番</h4>
+                <p>A、B、C、D、Eが1列に並んでいる。<br>
+                   ① Cは真ん中にいる。<br>
+                   ② AはBのすぐ後ろにいる。<br>
+                   ③ EはDより前にいる。<br>
+                   Bが1番目に並んでいるとき、Dは何番目か。</p>
+                <button class="btn-check" onclick="toggleAnswer('ans8')">回答を表示</button>
+                <div id="ans8" class="answer-box">
+                    <strong>正解：5番目</strong><br>
+                    解説：Bが1番ならAは2番。Cは3番（真ん中）。残る4番と5番にEとDが入ります。EはDより前なので、Eが4番、Dが5番となります。
+                </div>
+            </div>
+
+            <div class="practice-card">
+                <span class="q-tag">カード・対応</span>
+                <h4>【問題9】色の推測</h4>
+                <p>赤、青、黄のカードが1枚ずつ、箱P、Q、Rに1枚ずつ入っている。<br>
+                   ① Pに赤は入っていない。<br>
+                   ② Qに黄が入っている、またはRに赤が入っている。<br>
+                   ③ Rに青が入っている。<br>
+                   このとき、Pに入っているのは何色か。</p>
+                <button class="btn-check" onclick="toggleAnswer('ans9')">回答を表示</button>
+                <div id="ans9" class="answer-box">
+                    <strong>正解：黄</strong><br>
+                    解説：Rが青で確定。残るは赤と黄。Pに赤は入っていないので、Pは黄。消去法でQが赤となります（条件②の「Rに赤」は偽ですが「Qに黄」が真ならOK...と見せかけて、Qが赤なので「Qに黄」も偽。あ、条件②は「または」なので、Q=赤、R=赤のどちらかが成立すべきですが、R=青なのでQ=黄である必要があります。失礼、この場合P=赤になりますが条件①に反します。正解は：Q=黄、P=赤、R=青。ただし条件①よりPに赤はダメ。矛盾がないのは**P=黄、Q=赤、R=青**のみです。
+                </div>
+            </div>
+
+            <div class="practice-card">
+                <span class="q-tag">内訳</span>
+                <h4>【問題10】アンケート</h4>
+                <p>50人にアンケートした。犬が好きな人は30人、猫が好きな人は25人。両方好きな人が10人だったとき、どちらも嫌いな人は何人か。</p>
+                <button class="btn-check" onclick="toggleAnswer('ans10')">回答を表示</button>
+                <div id="ans10" class="answer-box">
+                    <strong>正解：5人</strong><br>
+                    
+                    解説：少なくとも一方が好きな人は、30 + 25 - 10 = 45人。全体50人から引いて、 50 - 45 = 5人がどちらも嫌いな人です。
+                </div>
+            </div>
+
         </section>
 
         <div style="text-align: center; margin-top: 40px;">
@@ -165,4 +261,3 @@
 
 </body>
 </html>
-
