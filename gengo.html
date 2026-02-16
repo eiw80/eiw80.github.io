@@ -39,6 +39,7 @@
             margin-top: 15px;
             border-radius: 5px;
             border: 1px dashed #ff9900;
+            line-height: 1.6;
         }
         .btn-check {
             background: #ff9900;
@@ -48,6 +49,15 @@
             cursor: pointer;
             border-radius: 5px;
             font-weight: bold;
+        }
+        .q-tag {
+            display: inline-block;
+            background: #f0f0f0;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            margin-bottom: 10px;
+            color: #666;
         }
     </style>
 </head>
@@ -71,126 +81,201 @@
 
         <section>
             <h3>1. 言語の頻出ジャンル</h3>
-            <p>言語分野は暗記要素が強く、知っているかどうかが合否を分けます。特に「二語の関係」は必ずマスターしましょう。</p>
+            <p>言語分野はスピードと知識量が勝負です。特に「二語の関係」は、二つの言葉がどういう繋がりを持っているかを瞬時に判断する訓練が必要です。</p>
             
             <div class="strategy-box">
-                <strong>二語の関係：主な5パターン</strong>
+                <strong>二語の関係：主な重要パターン</strong>
                 <div class="pattern-list">
                     <span class="pattern-item">包含（一方が他方の一部）</span>
                     <span class="pattern-item">同義（同じ意味）</span>
                     <span class="pattern-item">対立（反対の意味）</span>
                     <span class="pattern-item">原料（何から作られるか）</span>
-                    <span class="pattern-item">目的（何のために使うか）</span>
+                    <span class="pattern-item">役職・役割（対象と道具など）</span>
                 </div>
             </div>
-            
             
         </section>
 
         <section style="margin-top: 40px;">
             <h3>2. 練習問題</h3>
-            
+
             <div class="practice-card">
-                <h4>【問題1】二語の関係</h4>
+                <span class="q-tag">二語の関係</span>
+                <h4>【問題9】対立関係</h4>
                 <p>最初に示された二語の関係と同じ関係のものを選びなさい。</p>
-                <p><strong>「鉛筆 ： 文房具」</strong></p>
+                <p><strong>「主観 ： 客観」</strong></p>
                 <ol type="A" style="margin-left: 20px;">
-                    <li>りんご ： 果物</li>
-                    <li>机 ： 椅子</li>
-                    <li>米 ： 稲</li>
+                    <li>具体 ： 抽象</li>
+                    <li>原因 ： 結果</li>
+                    <li>過去 ： 現在</li>
                 </ol>
                 <br>
-                <button class="btn-check" onclick="toggleAnswer('ans1')">回答を表示</button>
-                <div id="ans1" class="answer-box">
-                    <strong>正解：A（包含関係）</strong><br>
-                    解説：鉛筆は文房具というカテゴリーの一部です。同様に、りんごは果物というカテゴリーの一部であるためAが正解です。
+                <button class="btn-check" onclick="toggleAnswer('ans9')">回答を表示</button>
+                <div id="ans9" class="answer-box">
+                    <strong>正解：A（対立関係）</strong><br>
+                    解説：「主観」と「客観」は対義語です。同様に「具体」と「抽象」も反対の意味を持つ対義語の関係にあります。
                 </div>
             </div>
 
             <div class="practice-card">
-                <h4>【問題2】二語の関係</h4>
+                <span class="q-tag">二語の関係</span>
+                <h4>【問題10】原料・材料</h4>
                 <p>最初に示された二語の関係と同じ関係のものを選びなさい。</p>
-                <p><strong>「医者 ： 患者」</strong></p>
+                <p><strong>「糸 ： 綿」</strong></p>
                 <ol type="A" style="margin-left: 20px;">
-                    <li>親 ： 子</li>
-                    <li>先生 ： 学生</li>
-                    <li>夫 ： 妻</li>
+                    <li>パン ： 麦粉</li>
+                    <li>革靴 ： 牛</li>
+                    <li>家具 ： 材木</li>
                 </ol>
                 <br>
-                <button class="btn-check" onclick="toggleAnswer('ans2')">回答を表示</button>
-                <div id="ans2" class="answer-box">
-                    <strong>正解：B（先生 ： 学生）</strong><br>
-                    解説：医者と患者は相互関係にあります。同様に、先生と学生も相互関係です。
+                <button class="btn-check" onclick="toggleAnswer('ans10')">回答を表示</button>
+                <div id="ans10" class="answer-box">
+                    <strong>正解：C（原料・材料の関係）</strong><br>
+                    解説：「綿（材料）」から「糸（製品）」が作られます。同様に「材木」から「家具」が作られるためCが正解です。
                 </div>
             </div>
 
             <div class="practice-card">
-                <h4>【問題3】語句の意味</h4>
+                <span class="q-tag">語句の意味</span>
+                <h4>【問題11】類義語</h4>
                 <p>次の言葉と最も意味が近いものを選びなさい。</p>
-                <p><strong>「不遜（ふそん）」</strong></p>
+                <p><strong>「加護（かご）」</strong></p>
                 <ol type="A" style="margin-left: 20px;">
-                    <li>謙虚</li>
-                    <li>傲慢</li>
-                    <li>誠実</li>
+                    <li>応援</li>
+                    <li>保護</li>
+                    <li>祝福</li>
                 </ol>
                 <br>
-                <button class="btn-check" onclick="toggleAnswer('ans3')">回答を表示</button>
-                <div id="ans3" class="answer-box">
-                    <strong>正解：B（傲慢）</strong><br>
-                    解説：「不遜」は、思い上がっていて、相手を見下すような態度を指します。反対の意味は「謙虚」です。
+                <button class="btn-check" onclick="toggleAnswer('ans11')">回答を表示</button>
+                <div id="ans11" class="answer-box">
+                    <strong>正解：B（保護）</strong><br>
+                    解説：「加護」は神仏などが守り助けることを意味します。意味が最も近いのは「保護」です。
                 </div>
             </div>
 
             <div class="practice-card">
-                <h4>【問題4】空欄に入る言葉</h4>
-                <p>次の文の空欄に入る最も適切な言葉を選びなさい。</p>
-                <p><strong>「彼の意見は非常に＿＿＿ため、多くの人が賛同した。」</strong></p>
-                <ol type="A" style="margin-left: 20px;">
-                    <li>曖昧</li>
-                    <li>明快</li>
-                    <li>矛盾</li>
-                </ol>
-                <br>
-                <button class="btn-check" onclick="toggleAnswer('ans4')">回答を表示</button>
-                <div id="ans4" class="answer-box">
-                    <strong>正解：B（明快）</strong><br>
-                    解説：「多くの人が賛同した」という後半部分から、意見が「はっきりとしていて分かりやすい」という意味の「明快」が適切です。
-                </div>
-            </div>
-
-            <div class="practice-card">
-                <h4>【問題5】反対語</h4>
+                <span class="q-tag">語句の意味</span>
+                <h4>【問題12】対義語</h4>
                 <p>次の言葉と最も反対の意味の言葉を選びなさい。</p>
-                <p><strong>「一時的（いちじてき）」</strong></p>
+                <p><strong>「収束（しゅうそく）」</strong></p>
                 <ol type="A" style="margin-left: 20px;">
-                    <li>永遠的</li>
-                    <li>永続的</li>
-                    <li>継続的</li>
+                    <li>拡散</li>
+                    <li>開始</li>
+                    <li>膨張</li>
                 </ol>
                 <br>
-                <button class="btn-check" onclick="toggleAnswer('ans5')">回答を表示</button>
-                <div id="ans5" class="answer-box">
-                    <strong>正解：B（永続的）</strong><br>
-                    解説：「一時的」は短期間という意味なので、その反対は「ずっと続く」という意味の「永続的」です。
+                <button class="btn-check" onclick="toggleAnswer('ans12')">回答を表示</button>
+                <div id="ans12" class="answer-box">
+                    <strong>正解：A（拡散）</strong><br>
+                    解説：「収束」は一つにまとまること。反対は広がり散らばることを意味する「拡散」です。
                 </div>
             </div>
 
             <div class="practice-card">
-                <h4>【問題6】類義語</h4>
-                <p>次の言葉と最も意味が近いものを選びなさい。</p>
-                <p><strong>「臨機応変（りんきおうへん）」</strong></p>
+                <span class="q-tag">二語の関係</span>
+                <h4>【問題13】同義関係</h4>
+                <p>最初に示された二語の関係と同じ関係のものを選びなさい。</p>
+                <p><strong>「失念 ： 忘却」</strong></p>
                 <ol type="A" style="margin-left: 20px;">
-                    <li>柔軟に対応する</li>
-                    <li>計画的に行動する</li>
-                    <li>慎重に判断する</li>
+                    <li>承諾 ： 拒絶</li>
+                    <li>悠久 ： 永遠</li>
+                    <li>開始 ： 終了</li>
                 </ol>
                 <br>
-                <button class="btn-check" onclick="toggleAnswer('ans6')">回答を表示</button>
-                <div id="ans6" class="answer-box">
-                    <strong>正解：A（柔軟に対応する）</strong><br>
-                    解説：「臨機応変」は、その時々の状況に応じて、柔軟に判断し行動することを意味します。
+                <button class="btn-check" onclick="toggleAnswer('ans13')">回答を表示</button>
+                <div id="ans13" class="answer-box">
+                    <strong>正解：B（同義関係）</strong><br>
+                    解説：どちらも「忘れる」という意味の同義語です。「悠久」と「永遠」も同じく「長く続く」という意味の同義語です。
                 </div>
             </div>
+
+            <div class="practice-card">
+                <span class="q-tag">四字熟語</span>
+                <h4>【問題14】意味に合う語句</h4>
+                <p><strong>「あれこれと考えをめぐらせること」</strong>を意味する四字熟語は？</p>
+                <ol type="A" style="margin-left: 20px;">
+                    <li>試行錯誤</li>
+                    <li>暗中模索</li>
+                    <li>思案に暮れる</li>
+                </ol>
+                <br>
+                <button class="btn-check" onclick="toggleAnswer('ans14')">回答を表示</button>
+                <div id="ans14" class="answer-box">
+                    <strong>正解：B（暗中模索）</strong><br>
+                    解説：「暗中模索（あんちゅうもさく）」は、手がかりのない中で色々と試みることを指します。
+                </div>
+            </div>
+
+            <div class="practice-card">
+                <span class="q-tag">二語の関係</span>
+                <h4>【問題15】目的・用途</h4>
+                <p>最初に示された二語の関係と同じ関係のものを選びなさい。</p>
+                <p><strong>「鍵 ： 施錠」</strong></p>
+                <ol type="A" style="margin-left: 20px;">
+                    <li>コップ ： 飲料</li>
+                    <li>時計 ： 計測</li>
+                    <li>筆 ： 執筆</li>
+                </ol>
+                <br>
+                <button class="btn-check" onclick="toggleAnswer('ans15')">回答を表示</button>
+                <div id="ans15" class="answer-box">
+                    <strong>正解：C（道具と目的）</strong><br>
+                    解説：鍵は施錠するために使う道具です。筆は執筆（書くこと）に使う道具なので、Cが正解です。
+                </div>
+            </div>
+
+            <div class="practice-card">
+                <span class="q-tag">ことわざ</span>
+                <h4>【問題16】意味に合うもの</h4>
+                <p><strong>「準備が整っていれば、何が起きても心配ない」</strong>ことを意味することわざは？</p>
+                <ol type="A" style="margin-left: 20px;">
+                    <li>備えあれば憂いなし</li>
+                    <li>転ばぬ先の杖</li>
+                    <li>石橋を叩いて渡る</li>
+                </ol>
+                <br>
+                <button class="btn-check" onclick="toggleAnswer('ans16')">回答を表示</button>
+                <div id="ans16" class="answer-box">
+                    <strong>正解：A（備えあれば憂いなし）</strong><br>
+                    解説：もっとも直接的に「心配がない」という意味を含んでいるのはAです。
+                </div>
+            </div>
+
+            <div class="practice-card">
+                <span class="q-tag">語句の用法</span>
+                <h4>【問題17】適切でないもの</h4>
+                <p>言葉の使い方が<strong>不自然なもの</strong>を選びなさい。</p>
+                <ol type="A" style="margin-left: 20px;">
+                    <li>琴線に触れる話だった。</li>
+                    <li>汚名を返上するために努力する。</li>
+                    <li>的を得た指摘に感心した。</li>
+                </ol>
+                <br>
+                <button class="btn-check" onclick="toggleAnswer('ans17')">回答を表示</button>
+                <div id="ans17" class="answer-box">
+                    <strong>正解：C（誤用されやすい表現）</strong><br>
+                    解説：正しくは「的を射る（まとをいる）」です。「的を得る」は慣用表現として認められつつありますが、試験では誤用とされることが多いです。
+                </div>
+            </div>
+
+            <div class="practice-card">
+                <span class="q-tag">二語の関係</span>
+                <h4>【問題18】生息場所</h4>
+                <p>最初に示された二語の関係と同じ関係のものを選びなさい。</p>
+                <p><strong>「ラクダ ： 砂漠」</strong></p>
+                <ol type="A" style="margin-left: 20px;">
+                    <li>ペンギン ： 南極</li>
+                    <li>パンダ ： 中国</li>
+                    <li>ライオン ： 檻</li>
+                </ol>
+                <br>
+                <button class="btn-check" onclick="toggleAnswer('ans18')">回答を表示</button>
+                <div id="ans18" class="answer-box">
+                    <strong>正解：A（生物と生息地）</strong><br>
+                    解説：ラクダが自然界で生息する場所が砂漠です。ペンギンが自然界で生息する場所は南極（北極にはいません）なので、Aが正解です。
+                </div>
+            </div>
+
         </section>
 
         <div style="text-align: center; margin-top: 40px;">
@@ -207,3 +292,4 @@
 
 </body>
 </html>
+
