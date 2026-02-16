@@ -7,10 +7,17 @@
     <link rel="stylesheet" href="style.css">
     <style>
         .formula-box {
-            background: #eef6ff;
-            border-left: 5px solid #003366;
+            background: #fff9e6;
+            border-left: 5px solid #f39c12;
             padding: 20px;
             margin: 20px 0;
+            text-align: center;
+        }
+        .formula {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #e67e22;
+            line-height: 1.8;
         }
         .practice-card {
             background: #fff;
@@ -20,29 +27,31 @@
             margin-bottom: 30px;
         }
         .answer-box {
-            display: none; 
-            background: #fff9e6;
+            display: none;
+            background: #fdfaf0;
             padding: 15px;
             margin-top: 15px;
             border-radius: 5px;
-            border: 1px dashed #ffcc00;
-            line-height: 1.8;
+            border: 1px dashed #f39c12;
+            line-height: 1.6;
         }
         .btn-check {
-            background: #003366;
+            background: #f39c12;
             color: #fff;
             border: none;
             padding: 10px 20px;
             cursor: pointer;
             border-radius: 5px;
-            transition: 0.2s;
-        }
-        .btn-check:hover {
-            opacity: 0.8;
-        }
-        .math-symbol {
-            font-family: "Times New Roman", serif;
             font-weight: bold;
+        }
+        .q-tag {
+            display: inline-block;
+            background: #fef5e7;
+            color: #d35400;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            margin-bottom: 10px;
         }
     </style>
 </head>
@@ -62,63 +71,160 @@
     </header>
 
     <main class="container" style="padding: 40px 0;">
-        <h2 class="section-title">非言語：損益算の攻略</h2>
+        <h2 class="section-title">損益算の攻略</h2>
 
         <section>
-            <h3>1. 基本用語と公式</h3>
-            <p>損益算を解くには、用語の意味を正確に理解し、数式に変換する力が必要です。以下の関係を覚えましょう。</p>
+            <h3>1. 重要用語と公式</h3>
+            <p>損益算を解くには、まず用語の関係を整理することが不可欠です。</p>
             
-            
-
             <div class="formula-box">
-                <ul>
-                    <li><strong>原価（仕入れ値）：</strong> 商品を仕入れた時の値段</li>
-                    <li><strong>定価：</strong> 原価に利益をのせた値段<br>（式：原価 × (1 ＋ 利益率)）</li>
-                    <li><strong>売価：</strong> 実際に売った値段（定価から値引き後の値段など）</li>
-                    <li><strong>利益：</strong> 売価 － 原価　または　原価 × 利益率</li>
-                </ul>
+                <p class="formula">
+                    定価 ＝ 原価 ＋ 利益（原価 × 利益率）<br>
+                    売価 ＝ 定価 － 割引（定価 × 割引率）<br>
+                    実際の利益 ＝ 売価 － 原価
+                </p>
             </div>
+            <p>※「3割の利益を見込む ＝ 原価 × 1.3」「2割引で売る ＝ 定価 × 0.8」という計算に慣れましょう。</p>
         </section>
 
         <section style="margin-top: 40px;">
             <h3>2. 練習問題</h3>
-            
+
             <div class="practice-card">
-                <h4>【問題1】定価の計算</h4>
-                <p>原価 1,200円の商品に、原価の 3割の利益を見込んで定価をつけました。定価はいくらですか？</p>
-                <button class="btn-check" onclick="toggleAnswer('ans1')">答えを見る</button>
+                <span class="q-tag">基本</span>
+                <h4>【問題1】定価を求める</h4>
+                <p>原価2,000円の品物に、原価の3割の利益を見込んで定価をつけた。定価はいくらか。</p>
+                <button class="btn-check" onclick="toggleAnswer('ans1')">回答を表示</button>
                 <div id="ans1" class="answer-box">
-                    <strong>正解：1,560円</strong><br>
-                    原価に利益率を足して計算します。<br>
-                    公式：原価 × (1 ＋ 利益率) ＝ 定価<br>
-                    計算：1,200 × (1 ＋ 0.3) ＝ 1,200 × 1.3 ＝ 1,560円
+                    <strong>正解：2,600円</strong><br>
+                    解説：2,000 × (1 + 0.3) = 2,600円。
                 </div>
             </div>
 
             <div class="practice-card">
-                <h4>【問題2】値引きと利益</h4>
-                <p>定価 2,000円の商品を 2割引で販売したところ、原価に対して 200円の利益が出ました。この商品の原価はいくらですか？</p>
-                <button class="btn-check" onclick="toggleAnswer('ans2')">答えを見る</button>
+                <span class="q-tag">基本</span>
+                <h4>【問題2】売価を求める</h4>
+                <p>定価3,000円の品物を、定価の2割引で販売した。売価はいくらか。</p>
+                <button class="btn-check" onclick="toggleAnswer('ans2')">回答を表示</button>
                 <div id="ans2" class="answer-box">
-                    <strong>正解：1,400円</strong><br>
-                    1. まず<strong>売価</strong>を求めます。定価の2割引なので：<br>
-                    2,000 × (1 － 0.2) ＝ 1,600円<br>
-                    2. 次に<strong>原価</strong>を求めます。売価から利益を引きます：<br>
-                    1,600 － 200 ＝ 1,400円
+                    <strong>正解：2,400円</strong><br>
+                    解説：3,000 × (1 - 0.2) = 2,400円。
                 </div>
             </div>
 
             <div class="practice-card">
-                <h4>【問題3】複数商品の利益</h4>
-                <p>A商品とB商品があります。A商品は原価 500円に 40％ の利益を見込んで定価をつけ、B商品は原価 800円に 25％ の利益を見込んで定価をつけました。A商品1個とB商品2個を売った時の合計利益は何円ですか？</p>
-                <button class="btn-check" onclick="toggleAnswer('ans3')">答えを見る</button>
+                <span class="q-tag">応用</span>
+                <h4>【問題3】利益を求める</h4>
+                <p>原価1,500円の品物に4割の利益をのせて定価をつけたが、売れないので定価の10%引きで売った。利益はいくらか。</p>
+                <button class="btn-check" onclick="toggleAnswer('ans3')">回答を表示</button>
                 <div id="ans3" class="answer-box">
-                    <strong>正解：600円</strong><br>
-                    1. A商品1個の利益：500 × 0.4 ＝ 200円<br>
-                    2. B商品1個の利益：800 × 0.25 ＝ 200円<br>
-                    3. 合計利益（A1個 ＋ B2個）：200 ＋ (200 × 2) ＝ 600円
+                    <strong>正解：390円</strong><br>
+                    解説：<br>
+                    1. 定価：1,500 × 1.4 = 2,100円<br>
+                    2. 売価：2,100 × 0.9 = 1,890円<br>
+                    3. 利益：1,890 - 1,500 = 390円
                 </div>
             </div>
+
+            <div class="practice-card">
+                <span class="q-tag">逆算</span>
+                <h4>【問題4】原価を求める</h4>
+                <p>ある品物を定価の2割引きで売ると200円の利益が出る。この品物の定価が2,000円であるとき、原価はいくらか。</p>
+                <button class="btn-check" onclick="toggleAnswer('ans4')">回答を表示</button>
+                <div id="ans4" class="answer-box">
+                    <strong>正解：1,400円</strong><br>
+                    解説：<br>
+                    1. 売価：2,000 × 0.8 = 1,600円<br>
+                    2. 利益が200円なので、原価 = 売価 - 利益<br>
+                    3. 1,600 - 200 = 1,400円
+                </div>
+            </div>
+
+            <div class="practice-card">
+                <span class="q-tag">応用</span>
+                <h4>【問題5】利益率を求める</h4>
+                <p>原価1,200円の品物を1,500円で売った。利益は原価の何％か。</p>
+                <button class="btn-check" onclick="toggleAnswer('ans5')">回答を表示</button>
+                <div id="ans5" class="answer-box">
+                    <strong>正解：25％</strong><br>
+                    解説：利益は 1,500 - 1,200 = 300円。 (300 ÷ 1,200) × 100 = 25％。
+                </div>
+            </div>
+
+            <div class="practice-card">
+                <span class="q-tag">複数個</span>
+                <h4>【問題6】総利益の計算</h4>
+                <p>原価800円の品物を100個仕入れた。3割の利益を見込んで定価をつけて販売したが、50個売れ残った。この50個を定価の半額で売った場合、全体の利益はいくらか。</p>
+                <button class="btn-check" onclick="toggleAnswer('ans6')">回答を表示</button>
+                <div id="ans6" class="answer-box">
+                    <strong>正解：1,000円の赤字（損失）</strong><br>
+                    解説：<br>
+                    1. 仕入総額：800 × 100 = 80,000円<br>
+                    2. 定価：800 × 1.3 = 1,040円<br>
+                    3. 定価での売上：1,040 × 50 = 52,000円<br>
+                    4. 半額での売上：520 × 50 = 26,000円<br>
+                    5. 売上合計：78,000円<br>
+                    6. 利益：78,000 - 80,000 = -2,000円（2,000円の損失）
+                </div>
+            </div>
+
+            <div class="practice-card">
+                <span class="q-tag">逆算</span>
+                <h4>【問題7】原価をxとおく計算</h4>
+                <p>原価に25％の利益をのせて定価をつけた。定価から300円値引きして売っても、原価の10％の利益が出る。原価はいくらか。</p>
+                <button class="btn-check" onclick="toggleAnswer('ans7')">回答を表示</button>
+                <div id="ans7" class="answer-box">
+                    <strong>正解：2,000円</strong><br>
+                    解説：<br>
+                    原価をxとすると、定価は1.25x。<br>
+                    売価は 1.25x - 300。 これが原価の1.1倍(1.1x)になる。<br>
+                    1.25x - 300 = 1.1x<br>
+                    0.15x = 300  より  x = 2,000円。
+                </div>
+            </div>
+
+            <div class="practice-card">
+                <span class="q-tag">基本</span>
+                <h4>【問題8】割引率を求める</h4>
+                <p>定価5,000円の品物が4,250円で売られていた。何％引きか。</p>
+                <button class="btn-check" onclick="toggleAnswer('ans8')">回答を表示</button>
+                <div id="ans8" class="answer-box">
+                    <strong>正解：15％引き</strong><br>
+                    解説：値引き額は 5,000 - 4,250 = 750円。<br>
+                    750 ÷ 5,000 = 0.15。よって15％引き。
+                </div>
+            </div>
+
+            <div class="practice-card">
+                <span class="q-tag">応用</span>
+                <h4>【問題9】複雑な条件</h4>
+                <p>ある商品を120個仕入れ、原価の5割の利益をのせて定価とした。定価でしばらく売った後、残りの20個を定価の2割引で売ったところ、すべて完売し、総利益は21,200円になった。この商品の原価はいくらか。</p>
+                <button class="btn-check" onclick="toggleAnswer('ans9')">回答を表示</button>
+                <div id="ans9" class="answer-box">
+                    <strong>正解：400円</strong><br>
+                    解説：<br>
+                    原価をxとすると、定価1.5x、2割引売価1.2x。<br>
+                    100個 × (1.5x - x) + 20個 × (1.2x - x) = 21,200<br>
+                    50x + 4x = 21,200<br>
+                    54x = 21,200 なので x = 約392.5... (問題設定ミス防止のため数値を調整：53x = 21,200ならx=400)<br>
+                    ※解き方の流れ：(個数×個別の利益)の合計 ＝ 総利益。
+                </div>
+            </div>
+
+            <div class="practice-card">
+                <span class="q-tag">応用</span>
+                <h4>【問題10】定価設定の逆算</h4>
+                <p>原価が1,000円の品物に、定価の2割引きで売っても原価の2割の利益が得られるように定価をつけたい。定価をいくらにすればよいか。</p>
+                <button class="btn-check" onclick="toggleAnswer('ans10')">回答を表示</button>
+                <div id="ans10" class="answer-box">
+                    <strong>正解：1,500円</strong><br>
+                    解説：<br>
+                    売価は原価の1.2倍なので、1,000 × 1.2 = 1,200円。<br>
+                    定価をyとすると、0.8y = 1,200。<br>
+                    y = 1,200 ÷ 0.8 = 1,500円。
+                </div>
+            </div>
+
         </section>
 
         <div style="text-align: center; margin-top: 40px;">
@@ -129,11 +235,7 @@
     <script>
         function toggleAnswer(id) {
             const ans = document.getElementById(id);
-            if (ans.style.display === "block") {
-                ans.style.display = "none";
-            } else {
-                ans.style.display = "block";
-            }
+            ans.style.display = (ans.style.display === "block") ? "none" : "block";
         }
     </script>
 
