@@ -32,6 +32,7 @@
             margin-top: 15px;
             border-radius: 5px;
             border: 1px dashed #0055aa;
+            line-height: 1.6;
         }
         .btn-check {
             background: #0055aa;
@@ -40,6 +41,16 @@
             padding: 10px 20px;
             cursor: pointer;
             border-radius: 5px;
+            font-weight: bold;
+        }
+        .q-tag {
+            display: inline-block;
+            background: #e8f0ff;
+            color: #0055aa;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            margin-bottom: 10px;
         }
     </style>
 </head>
@@ -63,204 +74,283 @@
 
         <section>
             <h3>1. ENGの出題形式</h3>
-            <p>約20分間で約40問を解く必要があります。1問あたり30秒という超高速回答が求められます。</p>
+            <p>約20分間で約40問を解くスピード勝負です。1問あたり30秒以内に回答するリズムを身につけましょう。</p>
             
             <div class="strategy-box">
                 <span class="eng-category">■ 語彙・文法</span>
-                <p>同意語、反対語、空欄補充。中学〜高校レベルの英単語が中心ですが、瞬発力が必要です。</p>
+                <p>同意語、反対語、空欄補充。TOEIC 500〜600点程度の語彙力が目安です。</p>
                 <span class="eng-category">■ 読解</span>
-                <p>長文読解。内容はビジネスや科学など多岐にわたりますが、難易度はセンター試験（共通テスト）程度です。</p>
+                <p>メール、ビジネス文書、ニュース記事の長文読解が出題されます。</p>
             </div>
-            
-            
         </section>
 
         <section style="margin-top: 40px;">
             <h3>2. 練習問題</h3>
             
             <div class="practice-card">
-                <h4>【問題1】同意語（Synonyms）</h4>
-                <p>最初に示された語と最も意味が近いものを選びなさい。</p>
-                <p><strong>「ENORMOUS」</strong>（巨大な、莫大な）</p>
+                <span class="q-tag">Synonyms（同意語）</span>
+                <h4>【問題1】最も意味が近いものを選びなさい。</h4>
+                <p><strong>ENORMOUS</strong></p>
                 <ol type="A" style="margin-left: 20px;">
-                    <li>Tiny（小さい、ちっぽけな）</li>
-                    <li>Huge（巨大な、非常に大きい）</li>
-                    <li>Common（一般的な、普通の）</li>
+                    <li>Tiny</li>
+                    <li>Huge</li>
+                    <li>Common</li>
                 </ol>
                 <br>
                 <button class="btn-check" onclick="toggleAnswer('ans1')">Show Answer</button>
                 <div id="ans1" class="answer-box">
                     <strong>正解：B（Huge）</strong><br>
-                    解説：「Enormous」は「巨大な、莫大な」という意味です。同意語は「Huge（巨大な）」や「Vast（広大な）」になります。AのTinyは反対語です。
+                    EnormousとHugeはともに「巨大な、莫大な」という意味です。
                 </div>
             </div>
 
             <div class="practice-card">
-                <h4>【問題2】空欄補充（Fill-in-the-blank）</h4>
-                <p>文中の（ ）に入れるのに最も適切なものを選びなさい。</p>
-                <p><strong>"The new project will (  ) a lot of time and effort."</strong></p>
+                <span class="q-tag">Fill-in-the-blank（空欄補充）</span>
+                <h4>【問題2】（ ）に入れるのに適切なものを選びなさい。</h4>
+                <p>"The new project will ( &nbsp;&nbsp; ) a lot of time and effort."</p>
                 <ol type="A" style="margin-left: 20px;">
-                    <li>require（必要とする、要求する）</li>
-                    <li>provide（提供する、供給する）</li>
-                    <li>expect（期待する、予想する）</li>
+                    <li>require</li>
+                    <li>provide</li>
+                    <li>expect</li>
                 </ol>
                 <br>
                 <button class="btn-check" onclick="toggleAnswer('ans2')">Show Answer</button>
                 <div id="ans2" class="answer-box">
                     <strong>正解：A（require）</strong><br>
-                    解説：「その新しいプロジェクトは多くの時間と労力を（必要とする）だろう」という意味になるよう、require（必要とする）を選びます。
+                    「多くの時間と労力を必要とする（require）」が文脈に合います。
                 </div>
             </div>
 
             <div class="practice-card">
-                <h4>【問題3】反対語（Antonyms）</h4>
-                <p>最初に示された語と最も意味が反対のものを選びなさい。</p>
-                <p><strong>「IMPROVE」</strong>（改善する、良くなる）</p>
+                <span class="q-tag">Antonyms（反対語）</span>
+                <h4>【問題3】最も意味が反対のものを選びなさい。</h4>
+                <p><strong>IMPROVE</strong></p>
                 <ol type="A" style="margin-left: 20px;">
-                    <li>Develop（開発する、発展させる）</li>
-                    <li>Deteriorate（悪化する、劣化する）</li>
-                    <li>Enhance（向上させる、高める）</li>
+                    <li>Develop</li>
+                    <li>Deteriorate</li>
+                    <li>Enhance</li>
                 </ol>
                 <br>
                 <button class="btn-check" onclick="toggleAnswer('ans3')">Show Answer</button>
                 <div id="ans3" class="answer-box">
                     <strong>正解：B（Deteriorate）</strong><br>
-                    解説：「Improve」は「改善する」という意味です。反対語は「Deteriorate」（悪化する、劣化する）になります。A、CはDevelopやEnhanceで同意語です。
+                    Improve（改善する）の反対は、Deteriorate（悪化させる）です。
                 </div>
             </div>
 
             <div class="practice-card">
-                <h4>【問題4】文法問題（時制と動詞の用法）</h4>
-                <p>文中の（ ）に入れるのに最も適切なものを選びなさい。</p>
-                <p><strong>"If I (  ) about the meeting earlier, I would have attended it."</strong></p>
+                <span class="q-tag">Grammar（文法）</span>
+                <h4>【問題4】（ ）に入れるのに適切なものを選びなさい。</h4>
+                <p>"If I ( &nbsp;&nbsp; ) about the meeting earlier, I would have attended it."</p>
                 <ol type="A" style="margin-left: 20px;">
-                    <li>know（知る・現在形）</li>
-                    <li>knew（知った・過去形）</li>
-                    <li>had known（知っていた・過去完了形）</li>
+                    <li>know</li>
+                    <li>knew</li>
+                    <li>had known</li>
                 </ol>
                 <br>
                 <button class="btn-check" onclick="toggleAnswer('ans4')">Show Answer</button>
                 <div id="ans4" class="answer-box">
                     <strong>正解：C（had known）</strong><br>
-                    解説：「もし早くに会議について知っていたなら、出席したのに」という過去の仮定法です。過去の仮定法では「had + 過去分詞」の形を使います。
+                    過去の事実に反する仮定（仮定法過去完了）なので、had + 過去分詞を使います。
                 </div>
             </div>
 
             <div class="practice-card">
-                <h4>【問題5】長文読解</h4>
-                <p style="font-style: italic; background: #f9f9f9; padding: 15px; border-radius: 5px;">
-                    <strong>[長文]</strong><br>
-                    "Digital transformation <small style="color:#666;">(デジタルトランスフォーメーション：組織全体の変革)</small> is changing the way companies operate <small style="color:#666;">(operate：経営する、運営する)</small> worldwide. Many organizations are now investing heavily <small style="color:#666;">(heavily：大規模に、大量に)</small> in technology to improve efficiency <small style="color:#666;">(efficiency：効率性)</small> and reduce costs. However, successful implementation <small style="color:#666;">(implementation：実施、導入)</small> requires not only modern equipment but also a skilled workforce <small style="color:#666;">(workforce：労働力、従業員)</small>. Companies that prioritize <small style="color:#666;">(prioritize：優先する)</small> employee training and development are more likely to achieve their transformation goals."
-                </p>
-                <p><strong>問題：この文章の主要なテーマは何か？</strong></p>
+                <span class="q-tag">Synonyms（同意語）</span>
+                <h4>【問題7】最も意味が近いものを選びなさい。</h4>
+                <p><strong>CONFIRM</strong></p>
                 <ol type="A" style="margin-left: 20px;">
-                    <li>デジタルトランスフォーメーション<strong style="color:#999;">のコスト</strong>について</li>
-                    <li>デジタルトランスフォーメーション成功には<strong style="color:#999;">技術と人材両方</strong>が必要であること</li>
-                    <li>従業員訓練プログラムの<strong style="color:#999;">重要性のみ</strong></li>
+                    <li>Verify</li>
+                    <li>Reject</li>
+                    <li>Ignore</li>
                 </ol>
                 <br>
-                <button class="btn-check" onclick="toggleAnswer('ans5')">Show Answer</button>
-                <div id="ans5" class="answer-box">
-                    <strong>正解：B</strong><br>
-                    解説：文章全体を読むと、デジタルトランスフォーメーション成功には「modern equipment（最新技術）」と「skilled workforce（熟練した労働力）」の両方が必要だと述べられています。技術だけでなく、人材育成も同じく重要であるというメッセージです。
+                <button class="btn-check" onclick="toggleAnswer('ans7')">Show Answer</button>
+                <div id="ans7" class="answer-box">
+                    <strong>正解：A（Verify）</strong><br>
+                    ConfirmもVerifyも「確認する、裏付ける」という意味で、ビジネスで多用されます。
                 </div>
             </div>
 
             <div class="practice-card">
-                <h4>【問題6】空欄補充（ビジネス表現）</h4>
-                <p>文中の（ ）に入れるのに最も適切なものを選びなさい。</p>
-                <p><strong>"Our company aims to (  ) into new markets next fiscal year."</strong></p>
+                <span class="q-tag">Antonyms（反対語）</span>
+                <h4>【問題8】最も意味が反対のものを選びなさい。</h4>
+                <p><strong>FLEXIBLE</strong></p>
                 <ol type="A" style="margin-left: 20px;">
-                    <li>expand（拡大する、進出する）</li>
-                    <li>shrink（縮小する、萎縮する）</li>
-                    <li>retreat（後退する、撤退する）</li>
+                    <li>Elastic</li>
+                    <li>Rigid</li>
+                    <li>Adaptable</li>
                 </ol>
                 <br>
-                <button class="btn-check" onclick="toggleAnswer('ans6')">Show Answer</button>
-                <div id="ans6" class="answer-box">
-                    <strong>正解：A（expand）</strong><br>
-                    解説：「来会計年度に新しい市場に（進出する）ことを目指しています」という意味から、expand（拡大する、進出する）が正解です。B、Cは反対の意味になってしまいます。
+                <button class="btn-check" onclick="toggleAnswer('ans8')">Show Answer</button>
+                <div id="ans8" class="answer-box">
+                    <strong>正解：B（Rigid）</strong><br>
+                    Flexible（柔軟な）の反対は、Rigid（厳格な、硬い）です。
+                </div>
+            </div>
+
+            <div class="practice-card">
+                <span class="q-tag">Fill-in-the-blank（空欄補充）</span>
+                <h4>【問題9】（ ）に入れるのに適切なものを選びなさい。</h4>
+                <p>"The manager ( &nbsp;&nbsp; ) the importance of meeting the deadline."</p>
+                <ol type="A" style="margin-left: 20px;">
+                    <li>emphasized</li>
+                    <li>interrupted</li>
+                    <li>distributed</li>
+                </ol>
+                <br>
+                <button class="btn-check" onclick="toggleAnswer('ans9')">Show Answer</button>
+                <div id="ans9" class="answer-box">
+                    <strong>正解：A（emphasized）</strong><br>
+                    「期限を守ることの重要性を強調した（emphasized）」が正解です。
+                </div>
+            </div>
+
+            <div class="practice-card">
+                <span class="q-tag">Word Definition（英英辞典）</span>
+                <h4>【問題10】次の説明に合う単語を選びなさい。</h4>
+                <p>"Something that is ready to be used or can be found."</p>
+                <ol type="A" style="margin-left: 20px;">
+                    <li>Available</li>
+                    <li>Precious</li>
+                    <li>Complex</li>
+                </ol>
+                <br>
+                <button class="btn-check" onclick="toggleAnswer('ans10')">Show Answer</button>
+                <div id="ans10" class="answer-box">
+                    <strong>正解：A（Available）</strong><br>
+                    「利用可能な、手に入る」という説明です。
+                </div>
+            </div>
+
+            <div class="practice-card">
+                <span class="q-tag">Synonyms（同意語）</span>
+                <h4>【問題11】最も意味が近いものを選びなさい。</h4>
+                <p><strong>RELIABLE</strong></p>
+                <ol type="A" style="margin-left: 20px;">
+                    <li>Doubtful</li>
+                    <li>Trustworthy</li>
+                    <li>Uncertain</li>
+                </ol>
+                <br>
+                <button class="btn-check" onclick="toggleAnswer('ans11')">Show Answer</button>
+                <div id="ans11" class="answer-box">
+                    <strong>正解：B（Trustworthy）</strong><br>
+                    ReliableとTrustworthyはともに「信頼できる」という意味です。
+                </div>
+            </div>
+
+            <div class="practice-card">
+                <span class="q-tag">Antonyms（反対語）</span>
+                <h4>【問題12】最も意味が反対のものを選びなさい。</h4>
+                <p><strong>PREVIOUS</strong></p>
+                <ol type="A" style="margin-left: 20px;">
+                    <li>Former</li>
+                    <li>Following</li>
+                    <li>Prior</li>
+                </ol>
+                <br>
+                <button class="btn-check" onclick="toggleAnswer('ans12')">Show Answer</button>
+                <div id="ans12" class="answer-box">
+                    <strong>正解：B（Following）</strong><br>
+                    Previous（前の）の反対は、Following（次の、続く）です。
+                </div>
+            </div>
+
+            <div class="practice-card">
+                <span class="q-tag">Fill-in-the-blank（空欄補充）</span>
+                <h4>【問題13】（ ）に入れるのに適切なものを選びなさい。</h4>
+                <p>"Due to unforeseen circumstances, the event was ( &nbsp;&nbsp; )."</p>
+                <ol type="A" style="margin-left: 20px;">
+                    <li>cancelled</li>
+                    <li>continued</li>
+                    <li>launched</li>
+                </ol>
+                <br>
+                <button class="btn-check" onclick="toggleAnswer('ans13')">Show Answer</button>
+                <div id="ans13" class="answer-box">
+                    <strong>正解：A（cancelled）</strong><br>
+                    「予期せぬ事態により、イベントは中止された」が文脈的に自然です。
+                </div>
+            </div>
+
+            <div class="practice-card">
+                <span class="q-tag">Synonyms（同意語）</span>
+                <h4>【問題14】最も意味が近いものを選びなさい。</h4>
+                <p><strong>ESSENTIAL</strong></p>
+                <ol type="A" style="margin-left: 20px;">
+                    <li>Optional</li>
+                    <li>Secondary</li>
+                    <li>Crucial</li>
+                </ol>
+                <br>
+                <button class="btn-check" onclick="toggleAnswer('ans14')">Show Answer</button>
+                <div id="ans14" class="answer-box">
+                    <strong>正解：C（Crucial）</strong><br>
+                    EssentialとCrucialはともに「極めて重要な、不可欠な」という意味です。
+                </div>
+            </div>
+
+            <div class="practice-card">
+                <span class="q-tag">Antonyms（反対語）</span>
+                <h4>【問題15】最も意味が反対のものを選びなさい。</h4>
+                <p><strong>ABUNDANT</strong></p>
+                <ol type="A" style="margin-left: 20px;">
+                    <li>Scarce</li>
+                    <li>Plentiful</li>
+                    <li>Numerous</li>
+                </ol>
+                <br>
+                <button class="btn-check" onclick="toggleAnswer('ans15')">Show Answer</button>
+                <div id="ans15" class="answer-box">
+                    <strong>正解：A（Scarce）</strong><br>
+                    Abundant（豊富な）の反対は、Scarce（不足している、稀な）です。
+                </div>
+            </div>
+
+            <div class="practice-card">
+                <span class="q-tag">Word Definition（英英辞典）</span>
+                <h4>【問題16】次の説明に合う単語を選びなさい。</h4>
+                <p>"To give up something important in order to reach an agreement."</p>
+                <ol type="A" style="margin-left: 20px;">
+                    <li>Compromise</li>
+                    <li>Challenge</li>
+                    <li>Cooperate</li>
+                </ol>
+                <br>
+                <button class="btn-check" onclick="toggleAnswer('ans16')">Show Answer</button>
+                <div id="ans16" class="answer-box">
+                    <strong>正解：A（Compromise）</strong><br>
+                    合意のために譲歩する、つまり「妥協する」という説明です。
                 </div>
             </div>
 
             <div style="background: #f5f5f5; padding: 30px; margin-top: 40px; border-radius: 8px;">
-                <h3 style="color: #0055aa; margin-top: 0;">📚 重要な英単語集</h3>
+                <h3 style="color: #0055aa; margin-top: 0;">📚 さらに重要な英単語集</h3>
                 <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
                     <tr style="background: #e8f0ff; border-bottom: 2px solid #0055aa;">
                         <th style="text-align: left; padding: 12px; border-right: 1px solid #ddd;">英単語</th>
-                        <th style="text-align: left; padding: 12px;">日本語の意味</th>
+                        <th style="text-align: left; padding: 12px;">意味</th>
                     </tr>
                     <tr style="border-bottom: 1px solid #ddd;">
-                        <td style="padding: 10px; border-right: 1px solid #ddd; font-weight: bold;">Enormous</td>
-                        <td style="padding: 10px;">巨大な、莫大な</td>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; font-weight: bold;">Verify / Confirm</td>
+                        <td style="padding: 10px;">確認する</td>
                     </tr>
                     <tr style="border-bottom: 1px solid #ddd; background: #fafafa;">
-                        <td style="padding: 10px; border-right: 1px solid #ddd; font-weight: bold;">Huge</td>
-                        <td style="padding: 10px;">巨大な、非常に大きい</td>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; font-weight: bold;">Flexible / Rigid</td>
+                        <td style="padding: 10px;">柔軟な ／ 厳格な（反対語）</td>
                     </tr>
                     <tr style="border-bottom: 1px solid #ddd;">
-                        <td style="padding: 10px; border-right: 1px solid #ddd; font-weight: bold;">Tiny</td>
-                        <td style="padding: 10px;">小さい、ちっぽけな</td>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; font-weight: bold;">Available</td>
+                        <td style="padding: 10px;">利用可能な</td>
                     </tr>
                     <tr style="border-bottom: 1px solid #ddd; background: #fafafa;">
-                        <td style="padding: 10px; border-right: 1px solid #ddd; font-weight: bold;">Require</td>
-                        <td style="padding: 10px;">必要とする、要求する</td>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; font-weight: bold;">Emphasize</td>
+                        <td style="padding: 10px;">強調する</td>
                     </tr>
                     <tr style="border-bottom: 1px solid #ddd;">
-                        <td style="padding: 10px; border-right: 1px solid #ddd; font-weight: bold;">Provide</td>
-                        <td style="padding: 10px;">提供する、供給する</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid #ddd; background: #fafafa;">
-                        <td style="padding: 10px; border-right: 1px solid #ddd; font-weight: bold;">Expect</td>
-                        <td style="padding: 10px;">期待する、予想する</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid #ddd;">
-                        <td style="padding: 10px; border-right: 1px solid #ddd; font-weight: bold;">Improve</td>
-                        <td style="padding: 10px;">改善する、良くなる</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid #ddd; background: #fafafa;">
-                        <td style="padding: 10px; border-right: 1px solid #ddd; font-weight: bold;">Deteriorate</td>
-                        <td style="padding: 10px;">悪化する、劣化する</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid #ddd;">
-                        <td style="padding: 10px; border-right: 1px solid #ddd; font-weight: bold;">Enhance</td>
-                        <td style="padding: 10px;">向上させる、高める</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid #ddd; background: #fafafa;">
-                        <td style="padding: 10px; border-right: 1px solid #ddd; font-weight: bold;">Develop</td>
-                        <td style="padding: 10px;">開発する、発展させる</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid #ddd;">
-                        <td style="padding: 10px; border-right: 1px solid #ddd; font-weight: bold;">Expand</td>
-                        <td style="padding: 10px;">拡大する、進出する</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid #ddd; background: #fafafa;">
-                        <td style="padding: 10px; border-right: 1px solid #ddd; font-weight: bold;">Shrink</td>
-                        <td style="padding: 10px;">縮小する、萎縮する</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid #ddd;">
-                        <td style="padding: 10px; border-right: 1px solid #ddd; font-weight: bold;">Retreat</td>
-                        <td style="padding: 10px;">後退する、撤退する</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid #ddd; background: #fafafa;">
-                        <td style="padding: 10px; border-right: 1px solid #ddd; font-weight: bold;">Transform</td>
-                        <td style="padding: 10px;">変換する、改変する</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid #ddd;">
-                        <td style="padding: 10px; border-right: 1px solid #ddd; font-weight: bold;">Efficiency</td>
-                        <td style="padding: 10px;">効率性、効率</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid #ddd; background: #fafafa;">
-                        <td style="padding: 10px; border-right: 1px solid #ddd; font-weight: bold;">Implementation</td>
-                        <td style="padding: 10px;">実施、導入、実装</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid #ddd;">
-                        <td style="padding: 10px; border-right: 1px solid #ddd; font-weight: bold;">Workforce</td>
-                        <td style="padding: 10px;">労働力、従業員</td>
-                    </tr>
-                    <tr style="background: #fafafa;">
-                        <td style="padding: 10px; border-right: 1px solid #ddd; font-weight: bold;">Prioritize</td>
-                        <td style="padding: 10px;">優先する、優先順位をつける</td>
+                        <td style="padding: 10px; border-right: 1px solid #ddd; font-weight: bold;">Compromise</td>
+                        <td style="padding: 10px;">妥協する、歩み寄る</td>
                     </tr>
                 </table>
             </div>
@@ -280,3 +370,4 @@
 
 </body>
 </html>
+
