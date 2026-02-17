@@ -3,28 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SPI対策ガイド「テッパン！」| SPI 速度算 公式 覚え方 | 最短2週間で突破するテッパン対策</title>
-    <meta name="description" content="SPI対策なら「テッパン！」。頻出の速度算、損益算、推論などの非言語から言語・英語・性格検査まで、最短2週間でボーダーを突破するための効率的な解き方と練習問題を無料で公開中。">
-    
+    <title>SPI対策ガイド「テッパン！」| SPI 速度算 公式 覚え方</title>
     <link rel="stylesheet" href="style.css">
     
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5957526795996112"
-     crossorigin="anonymous"></script>
-
     <style>
-        /* 広告エリア用スタイル：高さを最低限確保してレイアウト崩れを防ぐ */
+        /* --- スマホ対応・広告はみ出し防止スタイル --- */
         .ad-wrapper {
+            width: 100%;           /* 幅を画面いっぱいに */
+            max-width: 100vw;      /* 画面幅を超えないように制限 */
+            overflow: hidden;      /* 万が一はみ出してもカットする */
             padding: 20px 0;
             text-align: center;
             background: #fdfdfd;
             border-bottom: 1px solid #eee;
-            min-height: 100px; /* 広告読み込み前のガタつき防止 */
+            box-sizing: border-box; /* パディングを幅に含める */
         }
+
+        /* 広告を中央に寄せ、スマホ幅で無理やり広げない設定 */
+        .ad-container {
+            display: inline-block;
+            max-width: 100%;       /* 親要素より大きくならない */
+            margin: 0 auto;
+        }
+
         .ad-label {
             font-size: 10px;
             color: #999;
             margin-bottom: 8px;
             display: block;
+        }
+
+        /* ヒーローセクションのスマホ調整 */
+        .hero h2 {
+            font-size: 1.5rem; /* スマホで文字が大きすぎるのを防ぐ */
+            padding: 0 15px;
+        }
+
+        /* ボタンがスマホで重ならないように調整 */
+        .cta-buttons .btn {
+            margin-bottom: 10px;
+            width: 90%; /* スマホではボタンを横いっぱいに近くする */
+            max-width: 300px;
+        }
+
+        @media (min-width: 768px) {
+            .cta-buttons .btn {
+                width: auto; /* PCでは元のサイズに戻す */
+            }
         }
     </style>
 </head>
@@ -33,20 +58,13 @@
     <header>
         <div class="container">
             <h1 class="logo">SPI対策「テッパン！」</h1>
-            <nav>
-                <ul>
-                    <li><a href="about.html">SPIとは</a></li>
-                    <li><a href="steps.html">対策の流れ</a></li>
-                    <li><a href="contents.html">学習コンテンツ</a></li>
-                </ul>
-            </nav>
-        </div>
+            </div>
     </header>
 
     <section class="hero">
         <div class="container">
             <h2>最短2週間で、SPIの壁を突破する。</h2>
-            <p>出題パターンを絞った効率的学習で、ボーダーラインを確実に超えましょう。</p>
+            <p>出題パターンを絞った効率的学習で攻略しましょう。</p>
             <div class="cta-buttons">
                 <div style="margin-bottom: 15px;">
                     <a href="son-eki.html" class="btn btn-primary">損益算</a>
@@ -54,10 +72,9 @@
                     <a href="suiron.html" class="btn btn-primary">推論</a>
                 </div>
                 <div>
-                    <a href="gengo.html" class="btn btn-secondary" style="background: #ff9900; border: none; color: #fff;">言語</a>
-                    <a href="english.html" class="btn btn-secondary" style="background: #0055aa; border: none; color: #fff;">英語(ENG)</a>
-                    <a href="seikaku.html" class="btn btn-secondary" style="background: #666; border: none; color: #fff;">性格</a>
-                    <a href="contents.html" class="btn btn-secondary">全メニュー</a>
+                    <a href="gengo.html" class="btn btn-secondary" style="background: #ff9900; color: #fff;">言語</a>
+                    <a href="english.html" class="btn btn-secondary" style="background: #0055aa; color: #fff;">英語</a>
+                    <a href="seikaku.html" class="btn btn-secondary" style="background: #666; color: #fff;">性格</a>
                 </div>
             </div>
         </div>
@@ -65,40 +82,23 @@
 
     <div class="ad-wrapper">
         <span class="ad-label">スポンサーリンク</span>
-        <script src="https://adm.shinobi.jp/s/317d094eb5ba21a54f682f35016c6f8f"></script>
-        </div>
+        <div class="ad-container">
+            <script src="https://adm.shinobi.jp/s/317d094eb5ba21a54f682f35016c6f8f"></script>
+            </div>
+    </div>
 
     <section id="steps" class="steps">
         <div class="container">
             <h3 class="section-title">SPI攻略の3ステップ</h3>
-            <div class="step-grid">
-                <div class="step-card">
-                    <span class="step-num">01</span>
-                    <h4>敵を知る</h4>
-                    <p>テストセンター、WEBテスティング等、方式で対策が変わります。</p>
-                </div>
-                <div class="step-card">
-                    <span class="step-num">02</span>
-                    <h4>基礎固め</h4>
-                    <p>
-                        非言語（<a href="son-eki.html" style="color: #006699; font-weight: bold;">損益</a>・<a href="sokudo.html" style="color: #006699; font-weight: bold;">速度</a>・<a href="suiron.html" style="color: #006699; font-weight: bold;">推論</a>）、
-                        <a href="gengo.html" style="color: #ff9900; font-weight: bold;">言語</a>、
-                        そして意外と重要な<a href="seikaku.html" style="color: #666; font-weight: bold;">性格検査</a>のコツをマスターします。
-                    </p>
-                </div>
-                <div class="step-card">
-                    <span class="step-num">03</span>
-                    <h4>速度を上げる</h4>
-                    <p>1問につき30〜40秒で解くスピード感を養います。</p>
-                </div>
             </div>
-        </div>
     </section>
 
-    <div style="text-align: center; padding: 30px 0; border-top: 1px solid #eee; min-height: 120px;">
+    <div class="ad-wrapper" style="border-top: 1px solid #eee; border-bottom: none;">
         <span class="ad-label">ADVERTISEMENT</span>
-        <script src="https://adm.shinobi.jp/s/97440d923359ea5d776cbe30fa200d51"></script>
-        </div>
+        <div class="ad-container">
+            <script src="https://adm.shinobi.jp/s/97440d923359ea5d776cbe30fa200d51"></script>
+            </div>
+    </div>
 
     <footer>
         <div class="container">
